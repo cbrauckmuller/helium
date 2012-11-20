@@ -237,7 +237,6 @@ As you can see below, we've appended a class of `error` to the `field-group` and
 		<label class="field-label">Last name</label>
 		<div class="fields">
 			<input type="text" />
-			
 			<div class="error-message">You&rsquo;ve got some problems, man.</div>
 		</div>
 	</div>
