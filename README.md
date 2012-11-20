@@ -96,4 +96,14 @@ It’s easy to add an icon of your choice to your buttons.
 
 In this case, the icon is the only thing in the button.
 	
-	<a class="button"><i class="icon"></i></a> 
+	<a class="button"><i class="icon"></i></a>
+	
+You can also prepend icons to button text. Icons will center themselves vertically.
+
+	<a class="button"><i class="icon icon-prepend"></i> I have an icon</a>
+	
+## Button icons with dividers
+
+Sometimes, you want a divider between icon and button text
+
+	<button class="button has-icon-divider"><i class="icon icon-prepend"></i>I have a divided icon</button>
