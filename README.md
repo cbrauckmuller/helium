@@ -4,7 +4,7 @@ Helium uses a grid based on fluid-width columns, based largely off the one found
 
 ## SASS Variables
 
-There are three SASS variables that will determine the makeup of your grid.
+There are three SASS variables that will determine the makeup of your grid. As with nearly every other variable in Helium, these are stored in `scss/config.scss`
 
 ### $page-width
 
