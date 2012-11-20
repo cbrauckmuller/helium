@@ -2,9 +2,13 @@
 
 Helium is a frontend responsive web framework for rapid prototyping and production-ready development using HTML5 and CSS3. In many ways it is similar to both Twitter Bootstrap and ZURB Foundation - in fact, it uses bits of their code. Unlike either of these two frameworks, however, Helium is designed to be much more lightweight and easier to tinker with. Think of it as a classic car where you can pop open the hood and easily work on the engine. The compiled default CSS file weighs in at a comparatively tiny 30k, versus approximately 100k for Bootstrap and almost 200k for Foundation.
 
-## SASS + Compass
+## Built with SASS + Compass
 
 Helium is built using SASS and Compass. I chose this preprocessor and mixin library, respectively, because they make working with CSS3 a lot easier than any other combination I have encountered to date.
+
+## Install Helium
+
+All you need to do is clone this repository to your machine and then point CodeKit to it. The config.rb file in the root will tell CodeKit what to do.
 
 # The Grid
 
