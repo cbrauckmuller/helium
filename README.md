@@ -53,3 +53,12 @@ The markup for building a grid in Helium is very lightweight and should look fam
 # Buttons
 
 Buttons are a big component of any UI. Helium tries to include many common button patterns without making too many assumptions about how you will use them.
+
+## Basic button style
+
+A clean, flexible button style for all different kinds of UI tasks. Keep in mind that you can use the `button` class on both `<a>` and `<button>` elements.
+
+	<a class="button>Here's a button</a>
+	
+	<button class="button>Here's another</button>
+	
