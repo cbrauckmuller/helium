@@ -158,14 +158,14 @@ Forms in Helium are build to be responsive-ready from the start. Two common desi
 
 ## Basic form markup
 
-Forms in helium are split into `field-group` elements which consist of a label and its accompanying fields, plus any help or error text that may appear based on validation.
+Forms in Helium are split into `field-group` elements which consist of a `field-label` and its accompanying `fields`, plus any help or error text that may appear based on validation.
 
 	<form>
 		<div class="field-group">
 			<label class="field-label">Email address</label>
 			
 			<div class="fields">
-				<input type="email" placeholder="name@example.com" />
+				<input type="email" placeholder="name@example.com">
 			</div>
 		</div>
 	</form>
