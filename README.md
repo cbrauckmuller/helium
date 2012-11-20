@@ -2,6 +2,10 @@
 
 Helium uses a grid based on fluid-width columns, based largely off the one found in ZURB Foundation. Each column's width is expressed as a percentage rather than a fixed number of pixels, so as the width of the viewport grows or shrinks, the grid does too.
 
+## Selectively Responsive
+
+By default, Helium uses a fixed-width layout. However, making it responsive is as simple as adding a class of `responsive` to the `<body>` element of your page. This allows you toggle responsive behavior on a per page basis.
+
 ## SASS Variables
 
 There are three SASS variables that will determine the makeup of your grid. As with nearly every other variable in Helium, these are stored in `scss/config.scss`
