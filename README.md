@@ -228,3 +228,17 @@ For lists containing multiple radio or checkbox options.
 			</li>
 		</ul>
 	</div>
+
+### Error messages
+
+As you can see below, we've appended a class of `error` to the `field-group` and added a new object with a class of `error-message` directly after the input.
+
+	<div class="field-group error">
+		<label class="field-label">Last name</label>
+			
+		<div class="fields">
+			<input type="text" />
+			
+			<div class="error-message">You&rsquo;ve got some problems, man.</div>
+		</div>
+	</div>
