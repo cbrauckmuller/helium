@@ -1,6 +1,6 @@
 # The Grid
 
-Helium uses a grid based on fluid-width columns, based largely off the one found in ZURB Foundation. Each column's width is expressed as a percentage rather than a fixed number of pixels, so as the width of the viewport grows or shrinks, the grid does too.
+Helium uses a nestable grid based on fluid-width columns, based largely off the one found in ZURB Foundation. Each column's width is expressed as a percentage rather than a fixed number of pixels, so as the width of the viewport grows or shrinks, the grid does too.
 
 ## Selectively Responsive
 
