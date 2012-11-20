@@ -1,6 +1,26 @@
 # The Grid
 
-Helium uses a grid based on fluid-width columns. Each column's width is expressed as a percentage rather than a fixed number of pixels, so as the width of the viewport grows or shrinks, the grid does too. 
+Helium uses a grid based on fluid-width columns, based largely off the one found in ZURB Foundation. Each column's width is expressed as a percentage rather than a fixed number of pixels, so as the width of the viewport grows or shrinks, the grid does too.
+
+## Building your grid
+
+The code for building a grid in Helium is very lightweight and should look familiar to you if you've ever used ZURB Foundation, 960gs or Bootstrap.
+
+	<div class="container">
+		<div class="row">
+			<div class="span4">
+			
+			</div>
+			
+			<div class="span4">
+			
+			</div>
+			
+			<div class="span4">
+			
+			</div>
+		</div>
+	</div>
 
 There are three values that will determine the makeup of your grid.
 
