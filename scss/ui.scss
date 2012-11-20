@@ -1,0 +1,21 @@
+// UI
+// --
+
+#bottom-content {
+	background: rgba(0,0,0,0.06);
+}
+
+#page-footer {
+	background: rgba(0,0,0,0.8);
+	color: #ccc;
+	
+	h3 {
+		color: #fff;
+		font-weight: normal;
+	}
+}
+
+#page-header hgroup h2 {
+	font-weight: 300;
+	color: $muted-font-color;
+}

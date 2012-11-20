@@ -1,0 +1,183 @@
+// Config.scss
+// -----------
+
+// Colors
+// ------
+
+$gray-light: #999;
+$gray: #444;
+$gray-dark: #222;
+$error-color: #9C2127;
+$blue: #006699;
+$facebook-blue: #3B5998;
+$twitter-blue: #00ACED;
+
+// Grid
+// -----
+
+$page-width: 940px;
+$column-count: 12;
+$column-gutter: 20px;
+
+// Typography
+// ----------
+
+$base-font-color : $gray;
+$muted-font-color : $gray-light;
+$base-font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$base-font-size : 14px;
+$base-line-height : 21px;
+$small-font-size : 12px;
+$heading-font-family : $base-font-family;
+$heading-font-weight: 700;
+$heading-color : $gray-dark;
+
+// Links
+// -----
+
+$link-color : $blue;
+
+// Miscellaneous UI
+// ----------------
+
+$site-background-color: #fff;
+$big-border-radius: 4px;
+$small-border-radius: 2px;
+$border-color: rgba(0,0,0,0.15);
+$box-shadow: 0px 1px 1px rgba(0,0,0,0.08);
+
+// Buttons
+// -------
+
+$button-theme: glossy; // Required - can take values of glossy or flat
+$button-height: 30px; // Total height of normal size button
+$button-caret-height: 4px;
+$button-font-color: $base-font-color;
+$button-font-family: $base-font-family;
+$button-font-size: 12px;
+$button-font-weight: bold;
+$button-icon-size: 16px;
+$button-solid-background: #e0e0e0; // Solid color for flat buttons and fallback
+$button-highlight: #fbfbfb; // Top gradient stop for glossy theme
+$button-lowlight: darken($button-highlight, 6%); // Bottom gradient stop for glossy theme
+$button-border-color: rgba(0,0,0,0.2); // Border color - ignored when theme is flat, highly recommended to keep this as an alpha value of black
+$button-border-width: 1px; // Border width - ignored when theme is flat
+$button-shine: #fff; // 1px shine at top of button and inset text - ignored when theme is flat
+$button-horizontal-padding: $button-font-size;
+$button-border-radius: $big-border-radius;
+$button-box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+$button-large-height: 40px;
+$button-large-font-size: 18px;
+$button-large-horizontal-padding: 20px;
+$button-small-height: 24px;
+$button-small-font-size: 11px;
+$button-small-horizontal-padding: 11px;
+
+// Navbar
+// ------
+
+$navbar-height: 50px;
+$navbar-highlight: #99191C;
+$navbar-lowlight: #6A111A;
+$navbar-link-font-size: 14px;
+$navbar-link-color: #fff;
+$navbar-branding-font-size: 18px;
+$navbar-caret-height: 5px;
+$navbar-link-horizontal-padding: $navbar-link-font-size;
+
+// Dropdowns
+// ---------
+
+$dropdown-background: #fff;
+$dropdown-link-font-size: $base-font-size;
+$dropdown-link-height: 24px;
+$dropdown-caret-height: 5px;
+$dropdown-box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+
+// Forms
+// -----
+
+$form-input-height: 30px;
+$form-transition-duration: 0.2s;
+$input-border-radius: 2px;
+$placeholder-color: $muted-font-color;
+$placeholder-focus-color: lighten($muted-font-color, 15%);
+$radio-checkbox-input-height: 13px;
+$radio-checkbox-item-height: $base-font-size * 2;
+$radio-checkbox-font-size: $base-font-size;
+$single-checkbox-font-size: $small-font-size;
+
+// Utilities
+// ---------
+
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.centered {
+	text-align: center;
+}
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+    &:after {
+        clear:both;
+    }
+    zoom:1;
+}
+
+@mixin list-reset {
+	margin-left: 0px;
+	
+	> li {
+		display: block;
+		list-style-type: none;	
+	}
+}
+
+@mixin list-horizontal {
+	@include clearfix();
+	
+	> li {
+		float: left;	
+	}
+}
+
+// CSS Triangles
+// -------------
+
+@mixin css-triangle($triangle-size, $triangle-color, $triangle-direction) {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border: solid $triangle-size;
+	
+	@if ($triangle-direction == top) {
+		border-color: $triangle-color transparent transparent transparent;
+	}
+	@if ($triangle-direction == bottom) {
+		border-color: transparent transparent $triangle-color transparent;
+	}
+	@if ($triangle-direction == left) {
+		border-color: transparent transparent transparent $triangle-color;
+	}
+	@if ($triangle-direction == right) {
+		border-color: transparent $triangle-color transparent transparent;
+	}
+}
+
+// Psuedo Elements
+// ---------------
+
+@mixin pseudo() {
+	content: "";
+	display: block;
+	position: absolute;
+}

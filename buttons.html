@@ -1,0 +1,266 @@
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+		<title>Buttons | Welcome to Helium</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/master.css">
+
+	</head>
+	
+	<body class="fixed-page-nav">
+	
+		<nav id="page-nav">
+			
+			<div class="container">
+			
+				<div id="nav-branding" class="left">
+					<a href="#">Helium</a>
+				</div>
+				
+				<ul id="nav-site" class="left section">
+					<li><a href="#">Home</a></li>
+					<li class="has-dropdown">
+						<a href="#" data-toggle="dropdown">Products <span class="caret"></span></a>
+						
+						<ul class="dropdown">
+							<li class="section-title">Noble Gases</li>
+							<li><a href="#">Helium</a></li>
+							<li><a href="#">Neon</a>
+							<li><a href="#">Argon</a></li>
+							<li><a href="#">Krypton</a></li>
+							<li><a href="#">Xenon</a></li>
+							<li><a href="#">Radon</a></li>
+							<li class="divider"></li>
+							<li class="section-title">Molecules</li>
+							<li><a href="#">Carbon Dioxide</a></li>
+							<li><a href="#">Sodium Chloride</a></li>
+						</ul>
+					</li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				
+				<div id="nav-auth" class="right section">
+					<a class="button" href="#">Log in</a>
+					<a class="button" href="#">Sign up</a>
+				</div>
+			
+			</div><!--end container-->
+		
+		</nav><!--end page-nav-->
+		
+		<header id="page-header" class="page-region">
+		
+			<div class="container">
+				
+				<hgroup>
+					<h1>Buttons &amp; Tabs</h1>
+				</hgroup>
+				
+			</div><!--end container-->
+		
+		</header><!--end page-header-->
+		
+		<div class="page-region">
+		
+			<div class="container">
+				
+				<div class="module">
+					<h2>Basic buttons</h2>
+					<p>A clean, uniform button style for all kinds of UI tasks. You can use the class to style both <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements.</p>
+					<code class="block">
+						&lt;a class=&quot;button&quot;&gt;Here&rsquo;s a button&lt;/a&gt;
+						
+						&lt;button class=&quot;button&quot;&gt;Here&rsquo;s another&lt;/button&gt;
+					</code>
+					<div class="block">
+						<a class="button" href="#">Here&rsquo;s a button</a>
+						<button class="button" type="submit">Here&rsquo;s another</button>
+					</div>
+				</div>
+
+				<div class="module">
+					<h2>Large buttons</h2>
+					<p>Often times, you want your primary call to action button to be larger than other UI buttons.</p>
+					<code class="block">
+						&lt;a class=&quot;button button-large&quot;&gt;I&rsquo;m a call to action!&lt;/a&gt;
+					</code>
+					<button id="bad-boy" class="button button-large" href="#"><i class="icon icon-prepend"></i>I&rsquo;m a call to action!</button>
+				</div>
+
+				<div class="module">
+					<h2>Small buttons</h2>
+					<p>Sometimes you need to fit buttons in a smaller space or de-emphasize them.</p>
+					<code class="block">
+						&lt;a class=&quot;button button-small&quot;&gt;Stan&lt;/a&gt;
+					</code>
+					<div class="block">
+						<a class="button button-small" href="#">Stan</a>
+						<a class="button button-small" href="#">Kyle</a>
+						<a class="button button-small" href="#">Kenny</a>
+						<a class="button button-small" href="#">Cartman</a>
+					</div>
+				</div>
+
+				<div class="module">
+					<h2>Pill buttons</h2>
+					<p>Perfect for centered buttons or buttons that hang out by themselves.</p>
+					<code class="block">
+						&lt;a class=&quot;button button-pill&quot;&gt;Take the red pill&lt;/a&gt;
+					</code>
+					<div class="block">
+						<a class="button button-pill" href="#">Take the red pill</a>
+						<a class="button button-pill" href="#">Take the blue pill</a>
+					</div>
+				</div>
+				
+				<div class="module">
+					<h2>Button groups</h2>
+					<p>These work great for toolbars, sub-navigation, toggling view options, etc.</p>
+					<div class="block">
+						<div class="button-group">
+							<a class="button" href="#">One if by land</a>
+							<a class="button" href="#">Two if by sea</a>
+							<a class="button" href="#">Three if by teleporter</a>
+						</div>
+						<a class="button">All by myself!</a>
+					</div>
+				</div>
+				
+				<div class="module">
+					<h2>Buttons with icons</h2>
+					<p>It&rsquo;s easy to add an icon of your choice to your buttons.</p>
+					<p>In this case, the icon is the only thing in the button.</p>
+					<code class="block">
+						&lt;a class=&quot;button&quot;&gt;&lt;i class=&quot;icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+					</code>
+					<div class="block">
+						<div class="button-group">
+							<a class="button" href="#"><i class="icon"></i></a>
+							<a class="button" href="#"><i class="icon"></i></a>
+							<a class="button" href="#"><i class="icon"></i></a>
+						</div>
+					</div>
+					<p>You can also prepend icons to button text. Icons will center themselves vertically.</p>
+					<code class="block">
+						&lt;a class=&quot;button&quot;&gt;&lt;i class=&quot;icon icon-prepend&quot;&gt;&lt;/i&gt; I have an icon&lt;/a&gt;
+					</code>
+					<div class="block">
+						<a class="button" href="#"><i class="icon icon-prepend"></i>I have an icon</a>
+					</div>
+				
+				</div>
+				
+				<div class="module">					
+					<h2>Button icons with dividers</h2>
+					
+					<p>Sometimes, you want a divider between icon and button text.</p>
+					
+					<div class="block">
+						<button class="button has-icon-divider" href="#"><i class="icon icon-prepend"></i>I have a divided icon</button>
+					</div>
+
+				</div>
+				
+				<div class="module">
+					<h2>Buttons with dropdowns</h2>
+					<p>Adding a nicely-styled dropdown menu to a button is dead easy.</p>
+					
+					<div class="button-group">
+						<div class="has-dropdown button-dropdown">
+							<a href="#" class="button" data-toggle="dropdown">I am a dropdown <span class="caret"></span></a>
+							<ul class="dropdown">
+								<li><a href="#">Dropdown item one</a></li>
+								<li><a href="#">Here is another</a></li>
+								<li><a href="#">Wait, one more</a></li>
+							</ul>
+						</div>
+						<a class="button">Regular button</a>
+						<div class="has-dropdown button-dropdown">
+							<a href="#" class="button" data-toggle="dropdown">I am another <span class="caret"></span></a>
+							<ul class="dropdown right">
+								<li><a href="#">Dropdown item one</a></li>
+								<li><a href="#">Here is another</a></li>
+								<li><a href="#">Wait, one more</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="has-dropdown button-dropdown">
+						<a href="#" class="button" data-toggle="dropdown">I am another <span class="caret"></span></a>
+						<ul class="dropdown">
+							<li><a href="#">Dropdown item one</a></li>
+							<li><a href="#">Here is another</a></li>
+							<li><a href="http://google.com">Wait, one more</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="module">
+					<h2>Social networking buttons</h2>
+					<p>Making social sharing or sign in buttons is a snap.</p>
+					<div class="block">
+						<button class="button button-facebook has-icon-divider"><i class="icon icon-prepend"></i>Sign in with Facebook</button>
+						<button class="button button-twitter has-icon-divider" href="#"><i class="icon icon-prepend"></i>Sign in with Twitter</button>
+					</div>
+				</div>
+				
+			</div><!--end container-->		
+		</div>
+			
+						
+		<footer id="page-footer" class="page-region">
+			
+			<div class="container">
+			
+				<div class="row">
+
+					<div class="span3">
+						<div class="module">
+							<h3>Footer Header</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
+						</div><!--end module-->
+					</div><!--end span3-->
+					
+					<div class="span3">
+						<div class="module">
+							<h3>Footer Header</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
+						</div><!--end module-->
+					</div><!--end span3-->
+					
+					<div class="span3">
+						<div class="module">
+							<h3>Footer Header</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
+						</div><!--end module-->
+					</div><!--end span3-->
+					
+					<div class="span3">
+						<div class="module">
+							<h3>Footer Header</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
+						</div><!--end module-->
+					</div><!--end span3-->
+
+				</div>
+			
+			</div><!--end container-->
+		
+		</footer><!--end page-footer-->
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap-dropdown.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				$("#bad-boy").click(function() {
+					$(this).addClass("active");
+				});
+			});
+		</script>
+		
+	</body>
+</html>

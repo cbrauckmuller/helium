@@ -1,0 +1,512 @@
+// Button sizing
+// -------------
+
+@mixin button-size($height, $font-size, $border-width, $border-color, $horizontal-padding) {
+	
+	height: $height;
+	padding: ($height - $font-size - ($border-width * 2)) / 2 $horizontal-padding;
+	font-size: $font-size;	
+}
+
+// Button border
+// -------------
+
+@mixin button-border($theme) {
+	@if $theme == "glossy" {
+		border-color: $button-border-color;
+	}
+	
+	@if $theme == "flat" {
+		border-color: transparent;
+	}
+}
+
+// Button theme
+// ------------
+
+@mixin button-theme($theme) {
+	@if $theme == "glossy" {
+		@include background-image(
+			linear-gradient(
+				top, 
+				$button-highlight 1px, 
+				$button-shine 1px, 
+				$button-shine 2px, 
+				$button-highlight 2px, 
+				$button-lowlight 100%
+			)
+		);
+		@include box-shadow($button-box-shadow);
+		text-shadow: 0px 1px 0px $button-shine;
+	}
+	
+	@if $theme == "flat" {
+		background: $button-solid-background;
+	}	
+}
+
+// Custom colored buttons
+// ----------------------
+
+@mixin button-custom(
+	$theme, 
+	$background-color, 
+	$text-color, 
+	$reversed: false
+) {
+
+	@if $theme == "glossy" {
+		@include background-image(
+			linear-gradient(
+				top, 
+				lighten($background-color, 5%) 1px, 
+				lighten($background-color, 10%) 1px, 
+				lighten($background-color, 10%) 2px, 
+				lighten($background-color, 5%) 2px, 
+				darken($background-color, 5%) 100%
+			)
+		);	
+	}
+	
+	@if $theme == "flat" {
+		background: $background-color;
+	}
+	
+	@if $reversed == true {
+		text-shadow: 0px 1px 0px rgba(0,0,0,0.2);
+		@include box-shadow(0px 1px 0px rgba(0,0,0,0.2));
+	}
+	
+	@if $reversed == false {
+		text-shadow: 0px 1px 0px rgba(0,0,0,0.2);
+	}
+
+	color: $text-color;
+
+	&:hover {
+
+		@if $theme == "glossy" {
+			@include background-image(
+				linear-gradient(
+					top, 
+					lighten($background-color, 10%) 1px, 
+					lighten($background-color, 15%) 1px, 
+					lighten($background-color, 15%) 2px, 
+					lighten($background-color, 15%) 2px, 
+					darken($background-color, 0%) 100%
+				)
+			);
+		}
+
+		@if $theme == "flat" {
+			background: lighten($background-color, 5%);
+		}
+	}
+
+	&:active,
+	&.active {
+
+		@if $theme == "glossy" {	
+			@include background-image(
+				linear-gradient(
+					top, 
+					darken($background-color, 5%) 0%,
+					$background-color 100% 
+				)
+			);
+			@include box-shadow(inset 0px 1px 2px rgba(0,0,0,0.15));
+		}
+		
+		@if $theme == "flat" {
+			background: darken($background-color, 5%);
+		}
+	}
+}
+
+// Base button styles
+// ------------------
+
+.button {
+
+	@include clearfix();
+ 	@include background-origin(border-box);
+ 	@include background-clip(border-box);
+	@include border-radius($button-border-radius);
+  	@include button-size($button-height, $button-font-size, $button-border-width, $button-border-color, $button-horizontal-padding);
+  	@include button-border($button-theme);
+  	@include button-theme($button-theme);
+  	
+  	display: inline-block;
+	margin: 0 $base-font-size / 4 0 0;
+	border-width: $button-border-width;
+	border-style: solid;
+	cursor: pointer;
+	
+	color: $button-font-color;
+	font-family: $button-font-family;
+	font-weight: $button-font-weight;
+	line-height: 1;
+	text-align: center;
+  	text-decoration: none;
+	vertical-align: middle;
+
+	// Last child
+	// ----------
+	
+	&:last-child {
+		margin-right: 0;
+	}
+	
+	// Button icons
+	// ------------
+	
+	.icon {
+		position: relative;
+		vertical-align: top;
+		top: ($button-font-size - $button-icon-size) / 2;
+	}
+	
+	// Buttons with icon dividers
+	// --------------------------
+	
+	&.has-icon-divider {
+		position: relative;
+		
+		.icon.icon-prepend {
+			margin-right: ($button-font-size * 1.8);
+		}
+		
+		&:before {
+			@include pseudo();
+			width: 1px;
+			height: 100%;
+			background: $button-border-color;
+			left: $button-horizontal-padding + $button-icon-size + $button-font-size - 2;
+			top: 0px;
+		}
+	}
+	
+	// Hover state
+	// -----------
+	
+	&:hover {
+
+		@if $button-theme == "glossy" {
+
+  		@include background-image(
+  			linear-gradient(
+  				top, 
+  				$button-shine 0px, 
+  				lighten($button-highlight, 3%) 1px, 
+  				lighten($button-lowlight, 3%) 100%
+  			)
+  		);
+  		
+  		}
+  		
+  		@if $button-theme == "flat" {
+	  		background: lighten($button-solid-background, 5%);
+  		}
+		
+		color: $button-font-color;
+		text-decoration: none;		
+	}
+
+	// Active state
+	// ------------
+	
+	&:active,
+	&.active {
+
+		@if $button-theme == "glossy" {
+			@include background-image(
+				linear-gradient(
+					top, 
+					$button-lowlight 0px, 
+					$button-highlight 100%
+				)
+			);
+			@include box-shadow(inset 0px 1px 2px rgba(0,0,0,0.15));
+		}
+		
+		@if $button-theme == "flat" {
+			background: darken($button-solid-background, 5%);
+		}
+	}
+	
+	// Focus state 
+	// -----------
+	
+	&:focus {
+		outline: none;
+	}
+
+	// Large buttons
+	// -------------
+	
+	&.button-large {
+
+		$height: $button-large-height;
+		$font-size: $button-large-font-size;
+		$border-width: $button-border-width;
+		$border-color: $button-border-color;
+		$horizontal-padding: $button-large-horizontal-padding;
+
+		@include button-size($height, $font-size, $border-width, $border-color, $horizontal-padding);
+		
+		.icon {
+			top: ($font-size - $button-icon-size) / 2;
+		}
+
+		&.has-icon-divider {
+			
+			.icon.icon-prepend {
+				margin-right: $horizontal-padding * 2;
+			}
+			
+			&:before {
+				left: $horizontal-padding + $button-icon-size + $horizontal-padding - 2;
+			}
+		}
+	}
+	
+	// Small buttons
+	// -------------
+	
+	&.button-small {
+		
+		$height: $button-small-height;
+		$font-size: $button-small-font-size;
+		$border-width: $button-border-width;
+		$border-color: $button-border-color;
+		$horizontal-padding: $button-small-horizontal-padding;
+
+		@include button-size($height, $font-size, $border-width, $border-color, $horizontal-padding);
+
+		.icon {
+			top: ($font-size - $button-icon-size) / 2;
+		}
+		
+		&.has-icon-divider {
+			
+			.icon.icon-prepend {
+				margin-right: $horizontal-padding * 2;
+			}
+			
+			&:before {
+				left: $horizontal-padding + $button-icon-size + $horizontal-padding - 2;
+			}
+		}
+	}
+	
+	// Pill buttons
+	// ------------
+	
+	&.button-pill {
+		@include border-radius(100px);
+		padding-left: 1.5em;
+		padding-right: 1.5em;	
+	}
+	
+	// Custom buttons
+	// --------------
+	
+	&.button-facebook {
+		@include button-custom(
+			$theme: $button-theme, 
+			$background-color: $facebook-blue, 
+			$text-color: #fff, 
+			$reversed: true	
+		);
+	}
+
+	&.button-twitter {
+		@include button-custom(
+			$theme: $button-theme, 
+			$background-color: darken($twitter-blue, 5%), 
+			$text-color: #fff, 
+			$reversed: true	
+		);
+	}
+}
+
+// Button dropdowns
+// ----------------
+
+.has-dropdown.button-dropdown {
+	display: inline-block;
+	margin-right: $base-font-size / 4; // Add back button right margin
+	
+	.button {
+		margin-right: 0; // Remove button right margin so button and container are coterminous
+		padding-right: ($button-horizontal-padding * 1.5) + ($button-caret-height * 2);
+
+		.caret {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: $button-horizontal-padding;
+			width: $navbar-caret-height * 2;
+			height: $button-height;
+			
+			&:after {
+				@include css-triangle($navbar-caret-height, $button-font-color, top);
+				position: absolute;
+				top: ($button-height / 2) - ($navbar-caret-height / 2);
+				left: 0;
+			}
+		}
+	}
+	
+	.dropdown {
+		left: 0;
+		margin-top: -1px;
+		@include border-radius(0 $small-border-radius $small-border-radius $small-border-radius);
+		
+		&.right {
+			left: auto;
+			right: 0;
+			@include border-radius($small-border-radius 0 $small-border-radius $small-border-radius);
+
+		}
+		
+		> li {
+			> a {
+				padding-left: $button-horizontal-padding;
+				padding-right: $button-horizontal-padding;
+			}
+		}
+	}
+	
+	&.open {
+		
+		> .button {
+			
+			@if $button-theme == "glossy" {
+				@include box-shadow($dropdown-box-shadow);
+			}
+			
+			@if $button-theme == "flat" {
+				border-color: $button-border-color;
+			}
+					
+			@include border-radius($button-border-radius $button-border-radius 0 0);
+			
+			background: $dropdown-background;
+			color: $base-font-color;
+			text-shadow: none;
+		}
+	}
+}
+
+// Button groups
+// -------------
+
+.button-group {
+	
+	@include clearfix();
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 $base-font-size / 4 0 0;
+	
+	> * {
+		float: left;
+	}
+	
+	.button {
+		@include border-radius(0);
+		margin-right: 0;
+
+		@if $button-theme == "glossy" {
+			border-right: none;
+		}
+		
+		@if $button-theme == "flat" {
+			border-right-color: $button-border-color;
+		}
+	}
+	
+	> .button {
+		
+		&:first-child {
+			@include border-radius($button-border-radius 0 0 $button-border-radius);
+		}
+
+		&:last-child {
+			@include border-radius(0 $button-border-radius $button-border-radius 0);
+			@include button-border($button-theme);
+			border-right-style: solid;
+			border-right-width: $button-border-width;
+		}
+	}
+	
+	// Dropdowns in button groups
+	// --------------------------
+	
+	.has-dropdown.button-dropdown {
+
+		margin-right: 0;
+		
+		.dropdown {
+			@include border-radius(0 0 $small-border-radius $small-border-radius);
+		}
+		
+		&:first-child {
+			.button {
+				@include border-radius($button-border-radius 0 0 $button-border-radius);
+			}
+		}
+		
+		&:last-child {
+			.button {
+				@include border-radius(0 $button-border-radius $button-border-radius 0);
+				@include button-border($button-theme);
+				border-right-style: solid;
+				border-right-width: $button-border-width;
+
+				@if $button-theme == "flat" {
+					border-left: none;
+				}
+			}
+		}
+		
+		&.open {
+			.button {
+				@include border-radius(0);
+				
+				@if $button-theme == "flat" {
+					border-color: $button-border-color;
+				}
+			}
+			
+			&:first-child {
+				.button {
+					@include border-radius($button-border-radius 0 0 0);
+				}				
+			}
+			
+			&:last-child {
+				.button {
+					@include border-radius(0 $button-border-radius 0 0);
+				}				
+			}
+		}
+	}
+}
+
+// Button icons
+// ------------
+
+.icon {
+	font-family: "Entypo";
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	@include border-radius(100px);
+	background: rgba(0,0,0,0.2);
+	vertical-align: middle;
+	
+	&.icon-prepend {
+		margin-right: 0.8em;
+	}
+}

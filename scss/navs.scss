@@ -1,0 +1,185 @@
+// Navbar
+// ------
+
+#page-nav {
+	background: $blue;
+	
+	#nav-branding {
+		a {
+			display: block;
+			height: $navbar-height;
+			padding: ($navbar-height - $navbar-branding-font-size) / 2 0;
+			padding-right: $base-font-size;
+			color: $navbar-link-color;
+			font-size: $navbar-branding-font-size;
+			font-weight: bold;
+			line-height: 1;
+			
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	
+	#nav-toggle {
+		display: none;
+	}
+
+	#nav-site {
+		@include list-reset();
+		@include list-horizontal();
+		margin: 0;
+		
+		> li {
+			
+			> a {
+				display: block;
+				height: $navbar-height;
+				padding: ($navbar-height - $navbar-link-font-size) / 2 $navbar-link-horizontal-padding;
+				color: $navbar-link-color;
+				font-size: $navbar-link-font-size;
+				line-height: 1;
+				
+				&:hover {
+					background-color: darken($link-color, 10%);
+					text-decoration: none;
+				}
+				
+				&:focus {
+					outline: none;
+				}
+			}
+			
+			&.has-dropdown {
+				> a {
+
+					padding-right: ($navbar-link-horizontal-padding * 1.5) + ($navbar-caret-height * 2);
+
+					.caret {
+						display: block;
+						position: absolute;
+						top: 0;
+						right: $navbar-link-horizontal-padding;
+						width: $navbar-caret-height * 2;
+						height: $navbar-height;
+						
+						&:after {
+							@include css-triangle($navbar-caret-height, $navbar-link-color, top);
+							position: absolute;
+							top: 50%;
+							left: 0;
+							margin-top: -1px;
+						}
+					}
+				}
+				
+				.dropdown {
+					border-top: 0;
+				}
+				
+				&.open {
+					> a {
+						.caret {
+							&:after {
+								@include css-triangle($navbar-caret-height, $base-font-color, top);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.button {
+		margin-top: ($navbar-height - $button-height) / 2;
+	}
+}
+
+// Navbar fixed to the top of the viewport
+// ---------------------------------------
+
+.fixed-page-nav { // Goes on the <body>
+	
+	padding-top: $navbar-height;
+	
+	#page-nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 5000;		
+	}
+}
+
+// Responsive styles for navbar
+// ----------------------------
+
+@media screen and (max-width: 767px) {
+
+	.collapse {
+	  position: relative;
+	  height: 0;
+	  overflow: hidden;
+	  -webkit-transition: height 0.35s ease;
+	     -moz-transition: height 0.35s ease;
+	       -o-transition: height 0.35s ease;
+	          transition: height 0.35s ease;
+	}
+	
+	.collapse.in {
+	  height: auto;
+	}
+
+	.responsive {
+		#page-nav {
+			
+			#nav-site {
+				> li {
+					float: none;
+					
+					> a {
+						height: auto;
+						padding: 0.8em 0;
+						border-bottom: 1px solid $border-color;
+					}
+					
+					&:first-child > a {
+						border-top: 1px solid $border-color;
+					}
+				}
+			}
+			
+			#nav-toggle {
+				display: block;
+			}
+			
+			#nav-collapse {
+				clear: both;
+			}
+			
+			.nav-section {
+				&.left, &.right {
+					float: none;
+				}
+				
+				&:last-child {
+					padding-bottom: $column-gutter;
+				}
+			}
+			
+			.dropdown {
+				position: static;
+				display: none;
+				visibility: visible;
+				background: none;
+				border: none;
+				@include box-shadow(none);
+				color: #fff !important;
+			}
+			
+			.open .dropdown {
+				display: block;
+			}
+		}
+	}
+}

@@ -1,0 +1,175 @@
+// TYPE.SCSS
+// ---------
+
+// Body text
+// ---------
+
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	color: $base-font-color;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	font-size-adjust: none;
+	line-height: $base-line-height;
+}
+
+// All block-level elements
+// ------------------------
+
+p,
+ol,
+ul,
+dl,
+table,
+figure,
+hgroup {
+	margin: 0 0 $base-font-size;
+}
+
+// Headings
+// ---------
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	color: $heading-color;
+	font-family: $heading-font-family ;
+	font-weight: $heading-font-weight;
+	line-height: 1;
+	text-rendering: optimizelegibility; // Fix the character spacing for headings
+}
+h1, h2, h3 {
+	margin: 0 0 $base-font-size;
+}
+h1 {
+	font-size: 48px;
+	letter-spacing: -1px;
+}
+h2 {
+	font-size: 24px;
+}
+h3 {
+	font-size: 16px;
+	line-height: $base-line-height;
+}
+h4, h5, h6 {
+	margin: 0;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+}
+hgroup {
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: $base-font-size / 2;
+	}
+}
+
+// Links
+// -----
+
+a {
+	color: $link-color;
+	text-decoration: none;
+}
+a:hover {
+	color: lighten($link-color, 10%);
+	text-decoration: underline;
+}
+
+p a {
+	text-decoration: underline;
+}
+
+// Lists
+// -----
+
+ul, ol {
+	padding: 0;
+	margin-left: $base-font-size;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+	margin-bottom: 0;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+dl {
+	margin: 0 0 $base-font-size;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 0 $base-font-size;
+}
+
+// Tables
+// ------
+
+table {
+	width: 100%;
+	
+	th {
+		font-weight: bold;
+		border-top: 1px solid $border-color;
+	}
+	th, td {
+		padding: $base-font-size / 2;
+		border-bottom: 1px solid $border-color;
+		text-align: left;
+		
+		&:first-child {
+			padding-left: 0;
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+	.figure {
+		text-align: right;
+	}
+}
+
+// Code
+// ----
+
+code {
+	font-family: "Consolas", "Courier", monospace;
+}
+
+// Miscellaneous
+// -------------
+
+.small {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.muted {
+	color: $muted-font-color;
+}
+	
+// Horizontal rules
+hr {
+	margin: 0 0 $base-font-size - 1;
+	border: 0;
+	border-top: 1px solid $base-font-color;
+}
+
+// Emphasis
+// --------
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic;
+}
