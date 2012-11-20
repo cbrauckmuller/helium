@@ -172,7 +172,7 @@ Forms in Helium are split into `field-group` elements which consist of a `field-
 	
 ## Labels left of fields
 
-Putting labels to the left of fields is as simple as adding the `lebels-left` class to your `<form>` and then incorporating the Helium grid markup. In the example below, I've wrapped the `field-labels` with a `span3` and the `fields` with a `span9` but you can adjust those to compensate for longer or shorter label text.
+Putting labels to the left of fields is as simple as adding the `labels-left` class to your `<form>` and then incorporating the Helium grid markup. In the example below, I've wrapped the `field-labels` with a `span3` and the `fields` with a `span9` but you can adjust those to compensate for longer or shorter label text.
 
 	<form class="labels-left">
 
