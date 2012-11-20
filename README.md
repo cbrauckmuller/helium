@@ -4,11 +4,17 @@ Helium uses a grid based on fluid-width columns. Each column's width is expresse
 
 There are three values that will determine the makeup of your grid.
 
-$page-width - (pixels) This is the width of your content if you are using a fixed-width design, or the maximum width of your content if you are using a responsive design.
+### $page-width
 
-$column-count - (positive integer) The number of columns you would like in your grid. Some designs call for 12, others for 16, or for a simple site you might just want 3 or 6.
+(pixels) This is the width of your content if you are using a fixed-width design, or the maximum width of your content if you are using a responsive design.
 
-$column-gutter - (pixels) The amount of space between your columns.
+### $column-count
+
+(positive integer) The number of columns you would like in your grid. Some designs call for 12, others for 16, or for a simple site you might just want 3 or 6.
+
+### $column-gutter
+
+(pixels) The amount of space between your columns.
 
 If you are clever with your math, you can ensure that the column widths are round multiples of 10 pixels. This can be helpful on a fixed-width design. For example, a $page-width of 940px, $column-count of 12 and $column-gutter of 20px will give you 60px wide columns. These are the same values used by the popular 960 grid system.
 
