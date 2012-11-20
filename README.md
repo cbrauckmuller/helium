@@ -107,3 +107,16 @@ You can also prepend icons to button text. Icons will center themselves vertical
 Sometimes, you want a divider between icon and button text
 
 	<button class="button has-icon-divider"><i class="icon icon-prepend"></i>I have a divided icon</button>
+	
+## Buttons with dropdowns
+
+Adding a nicely-styled dropdown menu to a button is dead easy. The markup for the dropdown itself is identical to that used on the navbar.
+
+	<div class="has-dropdown button-dropdown">
+		<a href="#" class="button" data-toggle="dropdown">I am another <span class="caret"></span></a>
+		<ul class="dropdown right">
+			<li><a href="#">Dropdown item one</a></li>
+			<li><a href="#">Here is another</a></li>
+			<li><a href="#">Wait, one more</a></li>
+		</ul>
+	</div>
