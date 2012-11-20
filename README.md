@@ -100,7 +100,7 @@ In this case, the icon is the only thing in the button.
 	
 You can also prepend icons to button text. Icons will center themselves vertically.
 
-	<a class="button"><i class="icon icon-prepend"></i> I have an icon</a>
+	<a class="button"><i class="icon icon-prepend"></i>I have an icon</a>
 	
 ## Button icons with dividers
 
