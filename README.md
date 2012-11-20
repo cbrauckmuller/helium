@@ -120,3 +120,16 @@ Adding a nicely-styled dropdown menu to a button is dead easy. The markup for th
 			<li><a href="#">Wait, one more</a></li>
 		</ul>
 	</div>
+	
+## Custom buttons
+
+Perhaps the most powerful component of the buttons module in Helium is the ability for you to create custom-styled buttons by just passing in a few parameters.
+
+	&.button-facebook {
+		@include button-custom(
+			$theme: $button-theme, 
+			$background-color: $facebook-blue, 
+			$text-color: #fff, 
+			$reversed: true	
+		);
+	}
