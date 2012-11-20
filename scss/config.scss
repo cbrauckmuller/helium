@@ -18,6 +18,7 @@ $twitter-blue: #00ACED;
 $page-width: 940px;
 $column-count: 12;
 $column-gutter: 20px;
+$column-breakpoint: 767px;
 
 // Typography
 // ----------
@@ -173,7 +174,7 @@ $single-checkbox-font-size: $small-font-size;
 	}
 }
 
-// Psuedo Elements
+// Pseudo Elements
 // ---------------
 
 @mixin pseudo() {

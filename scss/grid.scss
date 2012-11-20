@@ -18,7 +18,7 @@
 		max-width: $page-width + ($column-gutter * 2);
 	}
 
-	@media screen and (max-width: 767px) {
+	@media screen and (max-width: $column-breakpoint) {
 		[class*="span"] {
 			float: none;
 			width: 100%;
