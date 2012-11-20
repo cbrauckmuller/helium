@@ -185,8 +185,12 @@ Putting labels to the left of fields is as simple as adding the `lebels-left` cl
 				
 				<div class="span9">								
 					<div class="fields">
-						<input type="text" />
+						<input type="text">
 					</div>
 				</div>
 			</div>
 		</div>
+	
+	</form>
+	
+In the same manner as the rest of the fluid grid, the "labels left of fields" form style will collapse into a traditional "labels on top of fields" design when the viewport width drops below the `$responsive-breakpoint` (767px by default).
