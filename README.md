@@ -194,3 +194,37 @@ Putting labels to the left of fields is as simple as adding the `labels-left` cl
 	</form>
 	
 In the same manner as the rest of the fluid grid, the "labels left of fields" form style will collapse into a traditional "labels on top of fields" design when the viewport width drops below the `$responsive-breakpoint` (767px by default).
+
+## Additional form styles
+
+Helium comes with a suite of additional form styles to make your life easier.
+
+### Instructional/help text under the field
+
+This is useful for additional, clarifying instructions that won't fit in the label.
+
+	<div class="fields">
+		<input type="number">
+		
+		<div class="field-instructions block">
+			This is a small 3 digit number on the back of your card.
+		</div>
+	</div>
+
+### Radio/checkbox lists
+
+For lists containing multiple radio or checkbox options.
+
+	<div class="fields">
+		<ul class="radio-checkbox-list">
+			<li>
+				<label><input type="radio" name="example-radio">Product inquiry</label>
+			</li>
+			<li>
+				<label><input type="radio" name="example-radio">Product inquiry</label>
+			</li>
+			<li>
+				<label><input type="radio" name="example-radio">Here&rsquo;s a really, really long item that goes onto two lines</label>
+			</li>
+		</ul>
+	</div>
