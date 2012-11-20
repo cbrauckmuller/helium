@@ -133,3 +133,21 @@ Perhaps the most powerful component of the buttons module in Helium is the abili
 			$reversed: true	
 		);
 	}
+
+You can see in the example above that we call the `button-custom` mixin and pass four arguments.
+
+### $theme
+
+This argument can take one of two values, `glossy` or `flat`. Of course, you can also pass in `$button-theme` so it inherits whatever you have the global default set to, which is what I have done here.
+
+### $background-color
+
+This can take a hex value or a solid CSS color like `blue`. If `$button-theme` is set to `glossy`, the mixin will automatically build nice gradients and highlights for you.
+
+## $text-color
+
+The color of the button text. Pretty self-explanatory.
+
+## $reversed
+
+Boolean. If set to `true` it means that the button's background color is dark whilst the text is light (often white). If set to `true` it means the opposite is the case. Setting this variable helps the mixin add subtle shadows that enhance the contrast of the button.
