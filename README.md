@@ -235,7 +235,6 @@ As you can see below, we've appended a class of `error` to the `field-group` and
 
 	<div class="field-group error">
 		<label class="field-label">Last name</label>
-			
 		<div class="fields">
 			<input type="text" />
 			
