@@ -158,7 +158,7 @@ Forms in Helium are build to be responsive-ready from the start. Two common desi
 
 ## Basic form markup
 
-Forms in Helium are split into `field-group` elements which consist of a `field-label` and its accompanying `fields`, plus any help or error text that may appear based on validation.
+Forms in Helium are split into `field-group` elements which consist of a `field-label` and its accompanying `fields`, plus any help or error text that may appear based on validation (more on that later).
 
 	<form>
 		<div class="field-group">
@@ -169,3 +169,24 @@ Forms in Helium are split into `field-group` elements which consist of a `field-
 			</div>
 		</div>
 	</form>
+	
+## Labels left of fields
+
+Putting labels to the left of fields is as simple as adding the `lebels-left` class to your `<form>` and then incorporating the Helium grid markup. In the example below, I've wrapped the `field-labels` with a `span3` and the `fields` with a `span9` but you can adjust those to compensate for longer or shorter label text.
+
+	<form class="labels-left">
+
+		<div class="field-group">
+			<div class="row">
+			
+				<div class="span3">
+					<label class="field-label">First name</label>
+				</div>
+				
+				<div class="span9">								
+					<div class="fields">
+						<input type="text" />
+					</div>
+				</div>
+			</div>
+		</div>
