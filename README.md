@@ -2,27 +2,9 @@
 
 Helium uses a grid based on fluid-width columns, based largely off the one found in ZURB Foundation. Each column's width is expressed as a percentage rather than a fixed number of pixels, so as the width of the viewport grows or shrinks, the grid does too.
 
-## Building your grid
+## SASS Variables
 
-The code for building a grid in Helium is very lightweight and should look familiar to you if you've ever used ZURB Foundation, 960gs or Bootstrap.
-
-	<div class="container">
-		<div class="row">
-			<div class="span4">
-			
-			</div>
-			
-			<div class="span4">
-			
-			</div>
-			
-			<div class="span4">
-			
-			</div>
-		</div>
-	</div>
-
-There are three values that will determine the makeup of your grid.
+There are three SASS variables that will determine the makeup of your grid.
 
 ### $page-width
 
@@ -37,6 +19,24 @@ There are three values that will determine the makeup of your grid.
 (pixels) The amount of space between your columns.
 
 If you are clever with your math, you can ensure that the column widths are round multiples of 10 pixels. This can be helpful on a fixed-width design. For example, a $page-width of 940px, $column-count of 12 and $column-gutter of 20px will give you 60px wide columns. These are the same values used by the popular 960 grid system.
+
+## Grid Markup
+
+The markup for building a grid in Helium is very lightweight and should look familiar to you if you've ever used ZURB Foundation, 960gs or Bootstrap.
+
+	<div class="container">
+		<div class="row">
+			<div class="span4">
+			</div>
+			
+			<div class="span4">
+			</div>
+			
+			<div class="span4">
+			</div>
+		</div>
+	</div>
+
 
 ## The Breakpoint
 
