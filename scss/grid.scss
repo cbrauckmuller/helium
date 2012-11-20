@@ -18,7 +18,7 @@
 		max-width: $page-width + ($column-gutter * 2);
 	}
 
-	@media screen and (max-width: $column-breakpoint) {
+	@media screen and (max-width: $responsive-breakpoint) {
 		[class*="span"] {
 			float: none;
 			width: 100%;
@@ -47,6 +47,14 @@
 
 .region {
 	padding: ($base-line-height * 2) 0 $base-line-height 0;
+	
+	&.bottom-rule {
+		border-bottom: 1px solid $border-color;
+	}
+}
+
+.subregion {
+	margin-bottom: $base-line-height * 2;
 }
 
 .module {

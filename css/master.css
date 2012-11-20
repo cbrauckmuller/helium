@@ -54,15 +54,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-.left {
+.float-left {
   float: left;
 }
 
-.right {
+.float-right {
   float: right;
 }
 
-.centered {
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-centered {
   text-align: center;
 }
 
@@ -173,6 +181,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .region {
   padding: 42px 0 21px 0;
+}
+.region.bottom-rule {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.subregion {
+  margin-bottom: 42px;
 }
 
 .module {
@@ -942,7 +957,14 @@ input::-moz-focus-inner {
 }
 
 #page-nav {
-  background: #006699;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0px, #0070a8), color-stop(100%, #005c8a));
+  background-image: -webkit-linear-gradient(top, #0070a8 0px, #005c8a 100%);
+  background-image: -moz-linear-gradient(top, #0070a8 0px, #005c8a 100%);
+  background-image: -o-linear-gradient(top, #0070a8 0px, #005c8a 100%);
+  background-image: linear-gradient(top, #0070a8 0px, #005c8a 100%);
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
 }
 #page-nav #nav-branding a {
   display: block;
@@ -1030,6 +1052,33 @@ input::-moz-focus-inner {
 }
 #page-nav .button {
   margin-top: 10px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1px, #006699), color-stop(1px, #0077b3), color-stop(2px, #0077b3), color-stop(2px, #006699), color-stop(100%, #004466));
+  background-image: -webkit-linear-gradient(top, #006699 1px, #0077b3 1px, #0077b3 2px, #006699 2px, #004466 100%);
+  background-image: -moz-linear-gradient(top, #006699 1px, #0077b3 1px, #0077b3 2px, #006699 2px, #004466 100%);
+  background-image: -o-linear-gradient(top, #006699 1px, #0077b3 1px, #0077b3 2px, #006699 2px, #004466 100%);
+  background-image: linear-gradient(top, #006699 1px, #0077b3 1px, #0077b3 2px, #006699 2px, #004466 100%);
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+#page-nav .button:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1px, #0077b3), color-stop(1px, #0088cc), color-stop(2px, #0088cc), color-stop(2px, #0088cc), color-stop(100%, #005580));
+  background-image: -webkit-linear-gradient(top, #0077b3 1px, #0088cc 1px, #0088cc 2px, #0088cc 2px, #005580 100%);
+  background-image: -moz-linear-gradient(top, #0077b3 1px, #0088cc 1px, #0088cc 2px, #0088cc 2px, #005580 100%);
+  background-image: -o-linear-gradient(top, #0077b3 1px, #0088cc 1px, #0088cc 2px, #0088cc 2px, #005580 100%);
+  background-image: linear-gradient(top, #0077b3 1px, #0088cc 1px, #0088cc 2px, #0088cc 2px, #005580 100%);
+}
+#page-nav .button:active, #page-nav .button.active {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #004466), color-stop(100%, #005580));
+  background-image: -webkit-linear-gradient(top, #004466 0%, #005580 100%);
+  background-image: -moz-linear-gradient(top, #004466 0%, #005580 100%);
+  background-image: -o-linear-gradient(top, #004466 0%, #005580 100%);
+  background-image: linear-gradient(top, #004466 0%, #005580 100%);
+  -webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .fixed-page-nav {
@@ -1075,7 +1124,7 @@ input::-moz-focus-inner {
   .responsive #page-nav #nav-collapse {
     clear: both;
   }
-  .responsive #page-nav .nav-section.left, .responsive #page-nav .nav-section.right {
+  .responsive #page-nav .nav-section.float-left, .responsive #page-nav .nav-section.float-right {
     float: none;
   }
   .responsive #page-nav .nav-section:last-child {
@@ -1193,6 +1242,12 @@ input::-moz-focus-inner {
 #page-header hgroup h2 {
   font-weight: 300;
   color: #999999;
+}
+
+#page-copyright {
+  padding-top: 14px;
+  background: rgba(0, 0, 0, 0.9);
+  color: #bbb;
 }
 
 .modal-active {

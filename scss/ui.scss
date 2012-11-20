@@ -19,3 +19,9 @@
 	font-weight: 300;
 	color: $muted-font-color;
 }
+
+#page-copyright {
+	padding-top: $base-font-size;
+	background: rgba(0,0,0,0.9);
+	color: #bbb;
+}

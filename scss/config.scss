@@ -18,7 +18,7 @@ $twitter-blue: #00ACED;
 $page-width: 940px;
 $column-count: 12;
 $column-gutter: 20px;
-$column-breakpoint: 767px;
+$responsive-breakpoint: 767px;
 
 // Typography
 // ----------
@@ -77,6 +77,7 @@ $button-small-horizontal-padding: 11px;
 // Navbar
 // ------
 
+$navbar-background-color: $link-color;
 $navbar-height: 50px;
 $navbar-highlight: #99191C;
 $navbar-lowlight: #6A111A;
@@ -111,13 +112,19 @@ $single-checkbox-font-size: $small-font-size;
 // Utilities
 // ---------
 
-.left {
+.float-left {
 	float: left;
 }
-.right {
+.float-right {
 	float: right;
 }
-.centered {
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-centered {
 	text-align: center;
 }
 
