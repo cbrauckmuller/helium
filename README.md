@@ -46,4 +46,6 @@ The markup for building a grid in Helium is very lightweight and should look fam
 
 ## The Breakpoint
 
-At a certain point, you are going to want your multi-column grid to collapse into a single column as the individual columns will start to become too narrow. By default, this is set to 767px, so anything smaller than an iPad in portrait mode with get a single-column layout. Feel free to adjust this value as your design requires is.
+### $responsive-breakpoint
+
+(pixels) At a certain point, you are going to want your multi-column grid to collapse into a single column as the individual columns will start to become too narrow. By default, this is set to 767px, so anything smaller than an iPad in portrait mode with get a single-column layout. Feel free to adjust this value as your design requires.
