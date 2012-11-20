@@ -4,7 +4,7 @@ Helium uses a grid based on fluid-width columns, based largely off the one found
 
 ## Selectively Responsive
 
-By default, Helium uses a fixed-width layout. However, making it responsive is as simple as adding a class of `responsive` to the `<body>` element of your page. This allows you toggle responsive behavior on a per page basis.
+By default, Helium uses a fixed-width layout. However, making it responsive is as simple as adding a class of `responsive` to the `<body>` element of your page. Responsive design is by its nature rather resource-intensive, so I built Helium to allow you to toggle responsive behavior on a per page basis so you can build out responsive pages as time and budgets permit. 
 
 ## SASS Variables
 
