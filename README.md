@@ -72,5 +72,21 @@ Often times, you want your primary call to action button to be larger than other
 
 Sometimes you need to fit buttons in a smaller space or de-emphasize them. Just append a class of `button-small`.
 
-	<a class="button button-small">I'm a small button</a> 
+	<a class="button button-small">I'm a small button</a>
+	
+## Pill buttons
+
+Perfect for centered buttons or buttons that hang out by themselves. Just append a class of `button-pill`.
+
+	<a class="button button-pill">Take the red pill</a>
+
+## Button groups
+
+These work great for toolbars, sub-navigation, toggling view options, etc.
+
+	<div class="button-group">
+		<a class="button">One if by land</a>
+		<a class="button">Two if by sea</a>
+		<a class="button">Three if by teleporter</a>
+	</div>
 	
