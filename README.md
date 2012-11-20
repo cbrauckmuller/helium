@@ -62,3 +62,15 @@ A clean, flexible button style for all different kinds of UI tasks. Keep in mind
 	
 	<button class="button>Here's another</button>
 	
+## Large buttons
+
+Often times, you want your primary call to action button to be larger than other UI buttons. Just append an additional class of `button-large`.
+
+	<a class="button button-large">I’m a call to action!</a>
+	
+## Small buttons
+
+Sometimes you need to fit buttons in a smaller space or de-emphasize them. Just append a class of `button-small`.
+
+	<a class="button button-small">I'm a small button</a> 
+	
