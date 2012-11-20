@@ -22,7 +22,7 @@ If you are clever with your math, you can ensure that the column widths are roun
 
 ## Grid Markup
 
-The markup for building a grid in Helium is very lightweight and should look familiar to you if you've ever used ZURB Foundation, 960gs or Bootstrap.
+The markup for building a grid in Helium is very lightweight and should look familiar to you if you've ever used ZURB Foundation, 960gs or Bootstrap. Keep in mind that the sum total of the `spanX` elements in a row must not exceed the value set for the `$column-count` variable in `config.scss`. The markup below would be appropriate for a 12 column grid.
 
 	<div class="container">
 		<div class="row">
