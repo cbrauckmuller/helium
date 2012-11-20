@@ -155,3 +155,17 @@ Boolean. If set to `true` it means that the button's background color is dark wh
 # Forms
 
 Forms in Helium are build to be responsive-ready from the start. Two common design patterns are available out of the box - labels above fields and labels to the left of fields. Both of these are useful in different scenarios. At the `$responsive-breakpoint`, however, the labels left of fields style collapses to labels above fields to ensure the design doesn't break on mobile devices.
+
+## Basic form markup
+
+Forms in helium are split into `field-group` elements which consist of a label and its accompanying fields, plus any help or error text that may appear based on validation.
+
+	<form>
+		<div class="field-group">
+			<label class="field-label">Email address</label>
+			
+			<div class="fields">
+				<input type="email" placeholder="name@example.com" />
+			</div>
+		</div>
+	</form>
