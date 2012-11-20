@@ -89,4 +89,11 @@ These work great for toolbars, sub-navigation, toggling view options, etc.
 		<a class="button">Two if by sea</a>
 		<a class="button">Three if by teleporter</a>
 	</div>
+
+## Buttons with icons
+
+It’s easy to add an icon of your choice to your buttons.
+
+In this case, the icon is the only thing in the button.
 	
+	<a class="button"><i class="icon"></i></a> 
