@@ -123,7 +123,7 @@ Adding a nicely-styled dropdown menu to a button is dead easy. The markup for th
 	
 ## Custom buttons
 
-Perhaps the most powerful component of the buttons module in Helium is the ability for you to create custom-styled buttons by just passing in a few parameters.
+Perhaps the most powerful component of the buttons module in Helium is the ability for you to create custom-styled buttons by just four arguments to a SASS mixin.
 
 	&.button-facebook {
 		@include button-custom(
@@ -144,10 +144,10 @@ This argument can take one of two values, `glossy` or `flat`. Of course, you can
 
 This can take a hex value or a solid CSS color like `blue`. If `$button-theme` is set to `glossy`, the mixin will automatically build nice gradients and highlights for you.
 
-## $text-color
+### $text-color
 
 The color of the button text. Pretty self-explanatory.
 
-## $reversed
+### $reversed
 
-Boolean. If set to `true` it means that the button's background color is dark whilst the text is light (often white). If set to `true` it means the opposite is the case. Setting this variable helps the mixin add subtle shadows that enhance the contrast of the button.
+Boolean. If set to `true` it means that the button's background color is dark whilst the text is light (often white). If set to `false` it means the opposite is the case. Setting this variable helps the mixin add subtle shadows that enhance the contrast of the button.
