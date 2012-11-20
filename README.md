@@ -8,7 +8,7 @@ Helium is built using SASS and Compass. I chose this preprocessor and mixin libr
 
 ## Install Helium
 
-All you need to do is clone this repository to your machine and then point CodeKit to it. The config.rb file in the root will tell CodeKit what to do. If you're not using a Mac or you don't have CodeKit there are other ways to compile SASS and Compass that I won't get into here.
+All you need to do is clone this repository to your machine and then point CodeKit to it. The `config.rb` file in the root will tell CodeKit what to do. If you're not using a Mac or you don't have CodeKit there are other ways to compile SASS and Compass that I won't get into here.
 
 # The Grid
 
