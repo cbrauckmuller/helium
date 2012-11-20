@@ -1,3 +1,7 @@
+#Welcome to Helium
+
+Helium is a frontend responsive web framework built using HTML5 and CSS3. In many ways it is similar to both Twitter Bootstrap and ZURB Foundation - in fact, it uses bits of their code.
+
 # The Grid
 
 Helium uses a nestable grid based on fluid-width columns, based largely off the one found in ZURB Foundation. Each column's width is expressed as a percentage rather than a fixed number of pixels, so as the width of the viewport grows or shrinks, the grid does too.
