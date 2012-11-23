@@ -32,6 +32,22 @@ textarea {
 	}
 }
 
+.input-inline {
+	display: inline-block;
+	height: $form-input-height;
+	line-height: $form-input-height;
+}
+
+.multi-field {
+	
+	@include clearfix();
+	
+	input, .input-inline {
+		float: left;
+		margin-right: ($base-font-size / 2) - 2;
+	}
+}
+
 // Left-aligned labels
 // -------------------
 
@@ -46,7 +62,7 @@ textarea {
 	
 		.field-label {
 			position: relative;
-			left: $column-gutter / 2;
+			left: $form-input-gutter / 2;
 			line-height: $base-font-size + 2;
 			padding: ($form-input-height - ($base-font-size + 2)) / 2 0;
 			text-align: right;
@@ -87,14 +103,20 @@ input[type="color"] {
 	-webkit-appearance: none;
 	
 	&:focus {
-		border-color: $link-color;		
+		border-color: $link-color;
+		@include box-shadow(0px 0px 3px rgba($link-color, 0.3));	
 	}
 }
 
 textarea {
 	height: auto;
 	min-width: 100%;
+	min-height: $form-input-height;
 	padding: $base-font-size / 2;
+}
+
+@for $i from 1 through 10 {
+  input.char#{$i} { width: ($i * ($base-font-size * 0.75)) + $base-font-size ; }
 }
 
 // Special positioning for select
@@ -141,7 +163,7 @@ input[type=checkbox] {
 
 .radio-checkbox-list {
 	@include list-reset();
-	padding-top: $radio-checkbox-font-size / 2;
+	margin-bottom: 0;
 		
 	> li {
 		line-height: 1.2;

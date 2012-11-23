@@ -117,10 +117,10 @@ dd {
 
 table {
 	width: 100%;
-	
+	border-top: 1px solid $border-color;
+
 	th {
 		font-weight: bold;
-		border-top: 1px solid $border-color;
 	}
 	th, td {
 		padding: $base-font-size / 2;

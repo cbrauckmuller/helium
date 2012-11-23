@@ -5,9 +5,12 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-		<title>Welcome to Helium</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta name="author" content="">	
+		<title>Helium, a lighter-than-air responsive front end</title>
 		<link rel="stylesheet" href="css/master.css">
 	</head>
 	
@@ -17,38 +20,44 @@
 			
 			<div class="container">
 			
-				<div id="nav-branding" class="left">
-					<a href="#">Helium</a>
+				<div id="nav-branding" class="float-left">
+					<a>Helium</a>
 				</div>
 				
-				<ul id="nav-site" class="left section">
-					<li><a href="#">Home</a></li>
-					<li class="has-dropdown">
-						<a href="#" data-toggle="dropdown">Products <span class="caret"></span></a>
-						
-						<ul class="dropdown">
-							<li class="section-title">Noble Gases</li>
-							<li><a href="#">Helium</a></li>
-							<li><a href="#">Neon</a>
-							<li><a href="#">Argon</a></li>
-							<li><a href="#">Krypton</a></li>
-							<li><a href="#">Xenon</a></li>
-							<li><a href="#">Radon</a></li>
-							<li class="divider"></li>
-							<li class="section-title">Molecules</li>
-							<li><a href="#">Carbon Dioxide</a></li>
-							<li><a href="#">Sodium Chloride</a></li>
-						</ul>
-					</li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
+				<button id="nav-toggle" class="button float-right" data-toggle="collapse" data-target="#nav-collapse">Toggle</button>
 				
-				<div id="nav-auth" class="right section">
-					<a class="button" href="#">Log in</a>
-					<a class="button" href="#">Sign up</a>
+				<div id="nav-collapse" class="collapse">
+				
+					<ul id="nav-site" class="nav-section float-left">
+						<li><a href="#">Home</a></li>
+						<li class="has-dropdown">
+							<a href="#" data-toggle="dropdown">Products <span class="caret"></span></a>
+							
+							<ul class="dropdown">
+								<li class="section-title">Noble Gases</li>
+								<li><a href="#">Helium</a></li>
+								<li><a href="#">Neon</a>
+								<li><a href="#">Argon</a></li>
+								<li><a href="#">Krypton</a></li>
+								<li><a href="#">Xenon</a></li>
+								<li><a href="#">Radon</a></li>
+								<li class="divider"></li>
+								<li class="section-title">Molecules</li>
+								<li><a href="#">Carbon Dioxide</a></li>
+								<li><a href="#">Sodium Chloride</a></li>
+							</ul>
+						</li>
+						<li><a href="#">How It Works</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+					
+					<div id="nav-auth" class="nav-section float-right">
+						<a class="button" href="#">Log in</a>
+						<a class="button" href="#">Sign up</a>
+					</div>
+				
 				</div>
-			
+								
 			</div><!--end container-->
 		
 		</nav><!--end page-nav-->
@@ -76,7 +85,7 @@
 						<h2>Labels above fields</h2>
 						
 						<form>
-							<div class="row">
+							<div class="field-row">
 								<div class="span5">
 									<div class="field-group">
 										<label class="field-label">First name</label>
@@ -105,7 +114,7 @@
 								</div>
 							</div>
 							
-							<div class="row">
+							<div class="field-row">
 								
 								<div class="span6">
 	
@@ -249,7 +258,7 @@
 						<form class="labels-left">
 
 							<div class="field-group">
-								<div class="row">
+								<div class="field-row">
 								
 									<div class="span3">
 										<label class="field-label">First name</label>
@@ -264,7 +273,7 @@
 							</div>
 							
 							<div class="field-group error">
-								<div class="row">
+								<div class="field-row">
 								
 									<div class="span3">
 										<label class="field-label">Last name</label>
@@ -281,7 +290,7 @@
 							</div>
 							
 							<div class="field-group">
-								<div class="row">
+								<div class="field-row">
 								
 									<div class="span3">
 										<label class="field-label">Date of birth</label>
@@ -309,10 +318,10 @@
 							</div>
 							
 							<div class="field-group">
-								<div class="row">
+								<div class="field-row">
 								
 									<div class="span3">
-										<label class="field-label">Email address</label>
+										<label class="field-label">Email</label>
 									</div>
 									
 									<div class="span9">								
@@ -324,7 +333,7 @@
 							</div>
 							
 							<div class="field-group">
-								<div class="row">
+								<div class="field-row">
 								
 									<div class="span3">
 										<label class="field-label">Comments</label>
@@ -337,9 +346,43 @@
 									</div>
 								</div>
 							</div>
+							
+							<div class="field-group">
+								<div class="field-row">
+									<div class="span3">
+										<label class="field-label">SSN</label>
+									</div>
+									<div class="span9">
+										<div class="fields multi-field">
+											<input class="char3" type="number">
+											<div class="input-inline">-</div>
+											<input class="char2" type="number">
+											<div class="input-inline">-</div>
+											<input class="char4" type="number"> 
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="field-group">
+								<div class="field-row">
+									<div class="span3">
+										<label class="field-label">Phone</label>
+									</div>
+									<div class="span9">
+										<div class="fields multi-field">
+											<input class="char3" type="number">
+											<div class="input-inline">-</div>
+											<input class="char3" type="number">
+											<div class="input-inline">-</div>
+											<input class="char4" type="number"> 
+										</div>
+									</div>
+								</div>
+							</div>
 
 							<div class="field-group">
-								<div class="row">
+								<div class="field-row">
 									<div class="span3">
 									
 									</div>
@@ -350,7 +393,7 @@
 							</div>
 							
 							<div class="field-group">
-								<div class="row">
+								<div class="field-row">
 									<div class="span3">
 									
 									</div>

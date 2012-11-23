@@ -10,6 +10,10 @@
 	width: $page-width + ($column-gutter * 2);
 	padding: 0 $column-gutter;
 	margin: 0 auto;
+	
+	@media screen and (max-width: $responsive-breakpoint) {
+		padding: 0 $mobile-padding;
+	}
 }
 
 .responsive {
@@ -22,6 +26,8 @@
 		[class*="span"] {
 			float: none;
 			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 }
@@ -30,12 +36,41 @@
 	@include clearfix();
 	margin-left: -($column-gutter / 2);
 	margin-right: -($column-gutter / 2);
+
+	@media screen and (max-width: $responsive-breakpoint) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.field-row {
+	@include clearfix();
+	margin-left: - ($form-input-gutter / 2);
+	margin-right: - ($form-input-gutter / 2);
+
+	@media screen and (max-width: $responsive-breakpoint) {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 
 [class*="span"] {
 	float: left;
 	min-height: 1px;
 	padding: 0 $column-gutter / 2;
+}
+
+.field-row {
+	[class*="span"] {
+		float: left;
+		min-height: 1px;
+		padding: 0 $form-input-gutter / 2;
+
+		@media screen and (max-width: $responsive-breakpoint) {
+			padding-left: 0;
+			padding-right: 0;
+		}				
+	}	
 }
 
 @for $i from 1 through $column-count {
