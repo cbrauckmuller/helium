@@ -1,7 +1,7 @@
 // Navbar
 // ------
 
-#page-nav {
+.top-bar {
 	
 	@include background-image(
 		linear-gradient(
@@ -33,7 +33,7 @@
 		display: none;
 	}
 
-	#nav-site {
+	.top-bar-links {
 		@include list-reset();
 		@include list-horizontal();
 		margin: 0;
@@ -125,7 +125,7 @@
 		padding-top: $navbar-height;
 	}
 	
-	#page-nav {
+	.top-bar {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -177,19 +177,19 @@
 
 	.responsive {
 		
-		#page-nav {
+		.top-bar {
 			
-			#nav-site {
+			#nav-branding {
+				float: left;
+			}
+			
+			.top-bar-links {
 				> li {
 					float: none;
 					
 					> a {
 						height: $vertical-nav-link-height;
 						padding: ($vertical-nav-link-height - $vertical-nav-link-font-size) / 2 0;
-						border-bottom: 1px solid $border-color;
-					}
-					
-					&:first-child > a {
 						border-top: 1px solid $border-color;
 					}
 				}
@@ -203,19 +203,13 @@
 				position: absolute;
 				width: 200px;
 				right: -200px;
+				top: $navbar-height + 20px;
 				
-				#nav-auth {
-					position: absolute;
-					top: 0;
-					width: 100%;
+				.top-bar-section {
 					padding: 0 20px;
-					background: #000;
-					height: $navbar-height;
 				}
 				
-				#nav-site {
-					padding: 20px;
-					margin-top: 50px;
+				.top-bar-links {
 					
 					> li.active {
 						> a {
@@ -234,13 +228,26 @@
 				}
 			}
 			
-			.nav-section {
+			.top-bar-section {
 				&.float-left, &.float-right {
 					float: none;
 				}
 				
 				&:last-child {
 					padding-bottom: $mobile-padding;
+				}
+			}
+			
+			.has-dropdown {
+				&.open {
+					> a {
+						background: none !important;
+						color: #fff !important;
+						
+						&:after {
+							display: none;
+						}
+					}
 				}
 			}
 			
@@ -252,6 +259,13 @@
 				border: none;
 				@include box-shadow(none);
 				color: #fff !important;
+				
+				> li {
+					> a {
+						color: #fff;
+						font-size: 12px;
+					}
+				}
 			}
 			
 			.open .dropdown {

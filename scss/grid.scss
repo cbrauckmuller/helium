@@ -62,6 +62,10 @@ body {
 	float: left;
 	min-height: 1px;
 	padding: 0 $column-gutter / 2;
+	
+	&:last-child {
+		float: right;
+	}
 }
 
 .field-row {
