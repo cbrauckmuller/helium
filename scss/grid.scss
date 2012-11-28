@@ -80,34 +80,12 @@
 // Vertical Spacing
 // ----------------
 
-.region {
-	padding: ($base-line-height * 2) 0 $base-line-height 0;
-	
-	&.bottom-rule {
-		border-bottom: 1px solid $border-color;
-	}
-}
-
-.subregion {
-	margin-bottom: $base-line-height * 2;
-}
-
 .module {
 	display: block;
 	margin-bottom: $base-line-height;
-	
-	> *:last-child {
-		margin-bottom: 0;
-	}
 }
 
 .block {
 	display: block;
 	margin-bottom: $base-font-size;
-}
-
-.box {
-	@include border-radius($small-border-radius);
-	padding: $column-gutter;
-	background: #fff;
 }

@@ -160,9 +160,10 @@ code {
 	
 // Horizontal rules
 hr {
-	margin: 0 0 $base-font-size - 1;
-	border: 0;
-	border-top: 1px solid $base-font-color;
+	height: 1px;
+	background: $border-color;
+	margin: $base-font-size 0 $base-font-size * 2;
+	border: none;
 }
 
 // Emphasis
