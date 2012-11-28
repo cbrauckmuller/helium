@@ -5,6 +5,10 @@
 	@include box-sizing(border-box);
 }
 
+body {
+	overflow-x: hidden;
+}
+
 .container {
 	@include clearfix();
 	width: $page-width + ($column-gutter * 2);

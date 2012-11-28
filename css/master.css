@@ -87,6 +87,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .container {
   zoom: 1;
   width: 1000px;
@@ -506,6 +510,14 @@ input[type="color"]:focus {
   -webkit-box-shadow: 0px 0px 3px rgba(0, 102, 153, 0.3);
   -moz-box-shadow: 0px 0px 3px rgba(0, 102, 153, 0.3);
   box-shadow: 0px 0px 3px rgba(0, 102, 153, 0.3);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 textarea {
@@ -1102,6 +1114,9 @@ input::-moz-focus-inner {
 #page-nav #nav-site > li > a:focus {
   outline: none;
 }
+#page-nav #nav-site > li.active a {
+  background-color: #004466;
+}
 #page-nav #nav-site > li.has-dropdown > a {
   padding-right: 31px;
 }
@@ -1167,7 +1182,7 @@ input::-moz-focus-inner {
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-.fixed-page-nav {
+.fixed-page-nav #viewport {
   padding-top: 50px;
 }
 .fixed-page-nav #page-nav {
@@ -1179,26 +1194,44 @@ input::-moz-focus-inner {
 }
 
 @media screen and (max-width: 767px) {
-  .collapse {
+  #viewport {
+    width: 100%;
+    overflow-x: hidden;
+    background: #777;
+  }
+  #viewport #page {
+    -webkit-transition: 0.2s left;
+    -moz-transition: 0.2s left;
+    -o-transition: 0.2s left;
+    transition: 0.2s left;
+    width: 100%;
     position: relative;
-    height: 0;
-    overflow: hidden;
-    -webkit-transition: height 0.35s ease;
-    -moz-transition: height 0.35s ease;
-    -o-transition: height 0.35s ease;
-    transition: height 0.35s ease;
+    left: 0;
+    background: #fff;
+  }
+  #viewport #page-nav {
+    -webkit-transition: 0.2s left;
+    -moz-transition: 0.2s left;
+    -o-transition: 0.2s left;
+    transition: 0.2s left;
   }
 
-  .collapse.in {
-    height: auto;
+  .mobile-nav-expanded {
+    overflow-y: hidden;
+  }
+  .mobile-nav-expanded #viewport #page {
+    left: -200px;
+  }
+  .mobile-nav-expanded.fixed-page-nav #page-nav {
+    left: -200px;
   }
 
   .responsive #page-nav #nav-site > li {
     float: none;
   }
   .responsive #page-nav #nav-site > li > a {
-    height: auto;
-    padding: 0.8em 0;
+    height: 36px;
+    padding: 11px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
   .responsive #page-nav #nav-site > li:first-child > a {
@@ -1208,7 +1241,39 @@ input::-moz-focus-inner {
     display: block;
   }
   .responsive #page-nav #nav-collapse {
-    clear: both;
+    position: absolute;
+    width: 200px;
+    right: -200px;
+  }
+  .responsive #page-nav #nav-collapse #nav-auth {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0 20px;
+    background: #000;
+    height: 50px;
+  }
+  .responsive #page-nav #nav-collapse #nav-site {
+    padding: 20px;
+    margin-top: 50px;
+  }
+  .responsive #page-nav #nav-collapse #nav-site > li.active > a {
+    position: relative;
+    background: none;
+  }
+  .responsive #page-nav #nav-collapse #nav-site > li.active > a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 10px;
+    border-color: transparent transparent transparent white;
+    left: -20px;
+    top: 50%;
+    margin-top: -10px;
   }
   .responsive #page-nav .nav-section.float-left, .responsive #page-nav .nav-section.float-right {
     float: none;
