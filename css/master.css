@@ -74,6 +74,29 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-align: center;
 }
 
+@media screen and (max-width: 767px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
 @font-face {
   font-family: 'Entypo';
   src: url("../webfonts/entypo.eot");
@@ -89,6 +112,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 .container {
@@ -248,7 +276,7 @@ html {
 
 body {
   color: #444444;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-size-adjust: none;
   line-height: 21px;
@@ -267,7 +295,7 @@ hgroup {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   color: #222222;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: 700;
   line-height: 1;
   text-rendering: optimizelegibility;
@@ -402,7 +430,7 @@ input,
 textarea {
   color: #444444;
   font-size: 14px;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: normal;
 }
 
@@ -414,6 +442,8 @@ textarea {
   color: #222222;
 }
 .field-group .field-instructions {
+  float: none;
+  clear: both;
   color: #999999;
   font-size: 12px;
 }
@@ -615,14 +645,13 @@ input[type=checkbox] {
   list-style-type: none;
 }
 .radio-checkbox-list > li {
-  line-height: 1.2;
-  padding: 7px 0;
+  padding: 3.5px 0;
 }
 .radio-checkbox-list input[type=radio],
 .radio-checkbox-list input[type=checkbox] {
   display: block;
   position: absolute;
-  top: 1.9px;
+  top: 4px;
   left: 0px;
 }
 .radio-checkbox-list label {
@@ -630,6 +659,9 @@ input[type=checkbox] {
   position: relative;
   padding-left: 20.93px;
   cursor: pointer;
+}
+.radio-checkbox-list .error-message {
+  margin-left: 20.93px;
 }
 
 .single-checkbox {
@@ -663,7 +695,7 @@ input::-moz-focus-inner {
   border: 0;
 }
 
-.error .field-label {
+.error label {
   color: #9c2127;
 }
 .error input {
@@ -694,6 +726,91 @@ input::-moz-focus-inner {
   height: 0;
   border: solid 6px;
   border-color: transparent transparent #9c2127 transparent;
+}
+
+.progress-indicator {
+  margin-left: 0px;
+  text-align: center;
+  font-size: 0;
+}
+.progress-indicator > li {
+  display: block;
+  list-style-type: none;
+}
+.progress-indicator .step {
+  display: inline-block;
+  position: relative;
+  width: 16%;
+}
+.progress-indicator .step a:hover {
+  text-decoration: none;
+}
+.progress-indicator .step .step-number {
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin: 0 auto;
+  padding: 4px;
+  background: #ccc;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+}
+.progress-indicator .step .step-number .fill {
+  display: block;
+  position: relative;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+  font-size: 16px;
+  line-height: 28px;
+}
+.progress-indicator .step .step-title {
+  color: #999999;
+  font-size: 12px;
+}
+.progress-indicator .step .step-connector {
+  display: block;
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  width: 100%;
+  height: 14px;
+  padding: 4px 0;
+  background: #ccc;
+}
+.progress-indicator .step.completed .step-number .fill {
+  background: #006699;
+  color: #fff;
+}
+.progress-indicator .step.completed .step-connector .fill {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: 6px;
+  background: #006699;
+}
+.progress-indicator .step.current .step-number {
+  padding: 0;
+  background: none;
+}
+.progress-indicator .step.current .step-number .fill {
+  width: 36px;
+  height: 36px;
+  background: #006699;
+  color: #fff;
+  font-size: 18px;
+  line-height: 36px;
+}
+.progress-indicator .step:last-child .step-connector {
+  display: none;
 }
 
 .button {
@@ -730,7 +847,7 @@ input::-moz-focus-inner {
   border-style: solid;
   cursor: pointer;
   color: #444444;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: bold;
   line-height: 1;
   text-align: center;
@@ -1302,6 +1419,58 @@ input::-moz-focus-inner {
     display: block;
   }
 }
+.tabs {
+  margin-left: 0;
+  zoom: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.tabs:before, .tabs:after {
+  content: "";
+  display: table;
+}
+.tabs:after {
+  clear: both;
+}
+.tabs > li {
+  display: block;
+  float: left;
+  margin: 0 5px -1px 0;
+  list-style-type: none;
+}
+.tabs > li:first-child {
+  margin-left: 20px;
+}
+.tabs > li > a {
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0px, #ffffff), color-stop(100%, #f7f7f7));
+  background-image: -webkit-linear-gradient(top, #ffffff 0px, #f7f7f7 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0px, #f7f7f7 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0px, #f7f7f7 100%);
+  background-image: linear-gradient(top, #ffffff 0px, #f7f7f7 100%);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+  padding: 12px;
+  color: #444444;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+}
+.tabs > li:not(.active):hover > a {
+  background: #f7f7f7;
+}
+.tabs > li.active > a {
+  background: none;
+  border-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) white rgba(0, 0, 0, 0.2);
+  color: #999999;
+}
+.tabs > li.active > a:hover {
+  text-decoration: none;
+}
+
 .has-dropdown {
   position: relative;
 }
@@ -1438,7 +1607,7 @@ input::-moz-focus-inner {
 }
 .modal .modal-section {
   position: relative;
-  padding: 14px 40px;
+  padding: 14px 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .modal .modal-section:first-child {
@@ -1447,7 +1616,7 @@ input::-moz-focus-inner {
   -ms-border-radius: 4px 4px 0 0;
   -o-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 .modal .modal-section:last-child {
   -webkit-border-radius: 0 0 4px 4px;
@@ -1455,7 +1624,7 @@ input::-moz-focus-inner {
   -ms-border-radius: 0 0 4px 4px;
   -o-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   border-bottom: none;
 }
 .modal .modal-section > *:last-child {
@@ -1501,7 +1670,7 @@ input::-moz-focus-inner {
     top: 0;
     left: 0;
     margin: 0;
-    padding: 40px;
+    padding: 20px;
     overflow-y: auto;
   }
   .modal.fade.in {
@@ -1515,8 +1684,8 @@ input::-moz-focus-inner {
 }
 .close {
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 20px;
+  right: 20px;
   font-size: 20px;
   font-weight: bold;
   line-height: 20px;

@@ -9,6 +9,11 @@ body {
 	overflow-x: hidden;
 }
 
+img {
+	display: block;
+	max-width: 100%;
+}
+
 .container {
 	@include clearfix();
 	width: $page-width + ($column-gutter * 2);

@@ -1,0 +1,107 @@
+// Utilities
+// ---------
+
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-centered {
+	text-align: center;
+}
+
+.desktop-only {		
+	@media screen and (max-width: $responsive-breakpoint) {
+		display: none !important;
+	}
+}
+
+.mobile-only {	
+	@media screen and (min-width: $responsive-breakpoint + 1) {
+		display: none !important;
+	}
+}
+
+@mixin respond-to($device) {
+	
+	@if device == "desktop" {
+		@media screen and (min-width: $responsive-breakpoint + 1) { @content }
+	}
+	
+	@if device == "mobile" {
+		@media screen and (max-width: $responsive-breakpoint) { @content }
+	}
+}
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+    &:after {
+        clear:both;
+    }
+    zoom:1;
+}
+
+.clearfix {
+	@include clearfix();
+}
+
+@mixin list-reset {
+	margin-left: 0px;
+	
+	> li {
+		display: block;
+		list-style-type: none;	
+	}
+}
+
+@mixin list-horizontal {
+	@include clearfix();
+	
+	> li {
+		float: left;	
+	}
+}
+
+// CSS Triangles
+// -------------
+
+@mixin css-triangle($triangle-size, $triangle-color, $triangle-direction) {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border: solid $triangle-size;
+	
+	@if ($triangle-direction == top) {
+		border-color: $triangle-color transparent transparent transparent;
+	}
+	@if ($triangle-direction == bottom) {
+		border-color: transparent transparent $triangle-color transparent;
+	}
+	@if ($triangle-direction == left) {
+		border-color: transparent transparent transparent $triangle-color;
+	}
+	@if ($triangle-direction == right) {
+		border-color: transparent $triangle-color transparent transparent;
+	}
+}
+
+// Pseudo Elements
+// ---------------
+
+@mixin pseudo() {
+	content: "";
+	display: block;
+	position: absolute;
+}

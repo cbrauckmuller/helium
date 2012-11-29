@@ -7,8 +7,6 @@
 	overflow: hidden;
 }
 
-$modal-width: 400px;
-
 // Background
 .modal-backdrop {
   position: fixed;
@@ -54,17 +52,17 @@ $modal-width: 400px;
     
     .modal-section {
     	position: relative;
-	    padding: $base-font-size $column-gutter;
+	    padding: $base-font-size $modal-padding;
 	    border-bottom: 1px solid rgba(0,0,0,0.1);
 	    
 	    &:first-child {
 		    @include border-radius($big-border-radius $big-border-radius 0 0);
-		    padding-top: $column-gutter;
+		    padding-top: $modal-padding;
 	    }
 	    
 	    &:last-child {
 		    @include border-radius(0 0 $big-border-radius $big-border-radius);
-		    padding-bottom: $column-gutter;
+		    padding-bottom: $modal-padding;
 		    border-bottom: none;
 	    }
 	    
@@ -116,7 +114,7 @@ $modal-width: 400px;
 		top: 0;
 		left: 0;
 		margin: 0;
-		padding: $column-gutter;
+		padding: $modal-padding;
 		overflow-y: auto;
 		
 		&.fade.in {
@@ -133,8 +131,8 @@ $modal-width: 400px;
 
 .close {
   position: absolute;
-  top: $column-gutter;
-  right: $column-gutter;
+  top: $modal-padding;
+  right: $modal-padding;
   font-size: 20px;
   font-weight: bold;
   line-height: 20px;

@@ -26,7 +26,7 @@ $mobile-padding: 15px;
 
 $base-font-color : $gray;
 $muted-font-color : $gray-light;
-$base-font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$base-font-family: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $base-font-size : 14px;
 $base-line-height : 21px;
 $small-font-size : 12px;
@@ -112,85 +112,11 @@ $placeholder-focus-color: lighten($muted-font-color, 15%);
 $radio-checkbox-input-height: 13px;
 $radio-checkbox-item-height: $base-font-size * 2;
 $radio-checkbox-font-size: $base-font-size;
+$radio-checkbox-line-height: $base-line-height;
 $single-checkbox-font-size: $small-font-size;
 
-// Utilities
-// ---------
+// Modals
+// ------
 
-.float-left {
-	float: left;
-}
-.float-right {
-	float: right;
-}
-.text-left {
-	text-align: left;
-}
-.text-right {
-	text-align: right;
-}
-.text-centered {
-	text-align: center;
-}
-
-@mixin clearfix {
-    &:before,
-    &:after {
-        content:"";
-        display:table;
-    }
-    &:after {
-        clear:both;
-    }
-    zoom:1;
-}
-
-@mixin list-reset {
-	margin-left: 0px;
-	
-	> li {
-		display: block;
-		list-style-type: none;	
-	}
-}
-
-@mixin list-horizontal {
-	@include clearfix();
-	
-	> li {
-		float: left;	
-	}
-}
-
-// CSS Triangles
-// -------------
-
-@mixin css-triangle($triangle-size, $triangle-color, $triangle-direction) {
-	content: "";
-	display: block;
-	width: 0;
-	height: 0;
-	border: solid $triangle-size;
-	
-	@if ($triangle-direction == top) {
-		border-color: $triangle-color transparent transparent transparent;
-	}
-	@if ($triangle-direction == bottom) {
-		border-color: transparent transparent $triangle-color transparent;
-	}
-	@if ($triangle-direction == left) {
-		border-color: transparent transparent transparent $triangle-color;
-	}
-	@if ($triangle-direction == right) {
-		border-color: transparent $triangle-color transparent transparent;
-	}
-}
-
-// Pseudo Elements
-// ---------------
-
-@mixin pseudo() {
-	content: "";
-	display: block;
-	position: absolute;
-}
+$modal-padding: 20px;
+$modal-width: 400px;

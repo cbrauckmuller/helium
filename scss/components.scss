@@ -1,0 +1,109 @@
+// Progress indicator
+// ------------------
+
+$progress-indicator-step-diameter: 36px;
+$progress-indicator-connector-height: 14px;
+$progress-indicator-fill-padding: 4px;
+
+.progress-indicator {
+	
+	@include list-reset();
+	text-align: center;
+	font-size: 0;
+	
+	.step {
+		display: inline-block;
+		position: relative;
+		width: 16%;
+		
+		a {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		
+		.step-number {
+			display: block;
+			width: $progress-indicator-step-diameter;
+			height: $progress-indicator-step-diameter;
+			margin: 0 auto;
+			padding: $progress-indicator-fill-padding;
+			background: #ccc;
+			
+			@include border-radius(100px);
+			
+			.fill {
+				display: block;
+				position: relative;
+				z-index: 2;
+				width: $progress-indicator-step-diameter - ($progress-indicator-fill-padding * 2);
+				height: $progress-indicator-step-diameter - ($progress-indicator-fill-padding * 2);
+
+				@include border-radius(100px);
+				
+				font-size: 16px;
+				line-height: $progress-indicator-step-diameter - ($progress-indicator-fill-padding * 2);
+				
+
+			}
+		}
+		
+		.step-title {
+			color: $muted-font-color;
+			font-size: 12px;
+		}
+		
+		.step-connector {
+			display: block;
+			position: absolute;
+			top: ($progress-indicator-step-diameter / 2) - ($progress-indicator-connector-height / 2);
+			left: 50%;
+			width: 100%;
+			height: $progress-indicator-connector-height;
+			padding: $progress-indicator-fill-padding 0;
+			background: #ccc;
+		}
+		
+		&.completed {
+			
+			.step-number {
+				.fill {
+					background: $link-color;
+					color: #fff;
+				}
+			}
+			
+			.step-connector {
+				.fill {
+					display: block;
+					position: relative;
+					z-index: 1;
+					height: $progress-indicator-connector-height - ($progress-indicator-fill-padding * 2);
+					background: $link-color;
+				}
+			}
+		}
+		
+		&.current {
+			.step-number {
+				padding: 0;
+				background: none;
+				
+				.fill {
+					width: $progress-indicator-step-diameter;
+					height: $progress-indicator-step-diameter;
+					background: $link-color;
+					color: #fff;
+					font-size: 18px;
+					line-height: $progress-indicator-step-diameter;					
+				}
+			}
+		}
+		
+		&:last-child {
+			.step-connector {
+				display: none;
+			}
+		}
+	}
+}

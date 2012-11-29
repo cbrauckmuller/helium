@@ -22,6 +22,8 @@ textarea {
 	}
 	
 	.field-instructions {
+		float: none;
+		clear: both;
 		color: $muted-font-color;
 		font-size: $small-font-size;
 		
@@ -173,15 +175,14 @@ input[type=checkbox] {
 	margin-bottom: 0;
 		
 	> li {
-		line-height: 1.2;
-		padding: ($radio-checkbox-item-height - $radio-checkbox-font-size) / 2 0;
+		padding: ($radio-checkbox-item-height - $radio-checkbox-line-height) / 2 0;
 	}
 
 	input[type=radio],
 	input[type=checkbox] {
 		display: block;
 		position: absolute;
-		top: (($radio-checkbox-font-size * 1.2) - $radio-checkbox-input-height) / 2;
+		top: ($radio-checkbox-line-height - $radio-checkbox-input-height) / 2;
 		left: 0px;
 	}
 	
@@ -190,6 +191,10 @@ input[type=checkbox] {
 		position: relative;
 		padding-left: $radio-checkbox-input-height * 1.61;
 		cursor: pointer;
+	}
+	
+	.error-message {
+		margin-left: $radio-checkbox-input-height * 1.61;
 	}
 }
 
@@ -238,7 +243,7 @@ input::-moz-focus-inner {
 // ------
 
 .error {
-	.field-label {
+	label {
 		color: $error-color;
 	}
 	

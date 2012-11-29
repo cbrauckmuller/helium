@@ -137,7 +137,7 @@
 // Responsive styles for navbar
 // ----------------------------
 
-@media screen and (max-width: 767px) {	
+@media screen and (max-width: $responsive-breakpoint) {	
 	
 	#viewport {
 		width: 100%;
@@ -270,6 +270,62 @@
 			
 			.open .dropdown {
 				display: block;
+			}
+		}
+	}
+}
+
+// Tabs
+// ----
+
+.tabs {
+	margin-left: 0;
+	@include clearfix();
+	border-bottom: 1px solid $border-color;
+
+	> li {
+		display: block;
+		float: left;
+		margin: 0 5px -1px 0;
+		list-style-type: none;
+		
+		&:first-child {
+			margin-left: $column-gutter / 2;
+		}
+
+		> a {
+			@include border-radius($big-border-radius $big-border-radius 0 0);
+			@include background-image(
+				linear-gradient(
+					top,
+					$site-background-color 0px,
+					darken($site-background-color, 3%) 100%
+				)
+			);
+			border: 1px solid $border-color;
+			display: block;
+			padding: (40px - 2 - $base-font-size) / 2;
+			color: $base-font-color;
+			font-size: $base-font-size;
+			line-height: 1;
+			text-decoration: none;
+		}
+		
+		&:not(.active):hover {
+			> a {
+				background: darken($site-background-color, 3%);
+			}
+		}
+
+		&.active {
+			> a {
+				background: none;
+				border-color: $border-color $border-color $site-background-color $border-color;
+				color: $muted-font-color;
+				
+				&:hover {
+					text-decoration: none;
+				}
 			}
 		}
 	}
