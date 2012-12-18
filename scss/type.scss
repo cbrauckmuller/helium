@@ -1,6 +1,3 @@
-// TYPE.SCSS
-// ---------
-
 // Body text
 // ---------
 
@@ -18,8 +15,8 @@ body {
 	line-height: $base-line-height;
 }
 
-// All block-level elements
-// ------------------------
+// Standard block-level elements
+// -----------------------------
 
 p,
 ol,
@@ -28,43 +25,44 @@ dl,
 table,
 figure,
 hgroup {
-	margin: 0 0 $base-font-size;
+	margin: 0 0 (4 * $tu);
 }
 
 // Headings
-// ---------
+// --------
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {	
 	margin: 0;
 	color: $heading-color;
-	font-family: $heading-font-family ;
+	font-family: $heading-font-family;
 	font-weight: $heading-font-weight;
 	line-height: 1;
 	text-rendering: optimizelegibility; // Fix the character spacing for headings
+	
+	a {
+		color: $gray-dark;
+	}
 }
-h1, h2, h3 {
-	margin: 0 0 $base-font-size;
+
+h1, h2 {
+	margin: 0 0 (6 * $tu);
 }
+
 h1 {
-	font-size: 48px;
+	font-size: 36px;
 	letter-spacing: -1px;
 }
+
 h2 {
 	font-size: 24px;
 }
+
 h3 {
 	font-size: 16px;
-	line-height: $base-line-height;
 }
+
 h4, h5, h6 {
-	margin: 0;
 	font-size: $base-font-size;
-	line-height: $base-line-height;
-}
-hgroup {
-	h1, h2, h3, h4, h5, h6 {
-		margin-bottom: $base-font-size / 2;
-	}
 }
 
 // Links
@@ -73,10 +71,11 @@ hgroup {
 a {
 	color: $link-color;
 	text-decoration: none;
-}
-a:hover {
-	color: lighten($link-color, 10%);
-	text-decoration: underline;
+	
+	&:hover {
+		color: lighten($link-color, 10%);
+		text-decoration: underline;		
+	}
 }
 
 p a {
@@ -95,6 +94,10 @@ ul ol,
 ol ol,
 ol ul {
 	margin-bottom: 0;
+}
+ul ul,
+ol ul {
+	list-style: circle;
 }
 ul {
 	list-style: disc;
@@ -144,33 +147,4 @@ table {
 
 code {
 	font-family: "Consolas", "Courier", monospace;
-}
-
-// Miscellaneous
-// -------------
-
-.small {
-	font-size: 12px;
-	line-height: 18px;
-}
-
-.muted {
-	color: $muted-font-color;
-}
-	
-// Horizontal rules
-hr {
-	height: 1px;
-	background: $border-color;
-	margin: $base-font-size 0 $base-font-size * 2;
-	border: none;
-}
-
-// Emphasis
-// --------
-strong {
-	font-weight: bold;
-}
-em {
-	font-style: italic;
 }

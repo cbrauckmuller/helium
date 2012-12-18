@@ -1,25 +1,24 @@
-// Config.scss
-// -----------
-
 // Colors
 // ------
 
 $gray-light: #999;
 $gray: #444;
 $gray-dark: #222;
-$error-color: #9C2127;
-$blue: #006699;
+$blue: #42769A;
 $facebook-blue: #3B5998;
 $twitter-blue: #00ACED;
+$red-dark: #A01D2B;
+
 
 // Grid
 // -----
 
-$page-width: 920px;
+$page-width: 940px;
 $column-count: 12;
-$column-gutter: 40px;
+$column-gutter: 20px;
 $responsive-breakpoint: 767px;
-$mobile-padding: 15px;
+$mobile-padding: 15px; // Distance from content to edge of screen on mobile
+$tablet-padding: 20px; // Distance from content to edge of screen on tablet
 
 // Typography
 // ----------
@@ -30,9 +29,11 @@ $base-font-family: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-
 $base-font-size : 14px;
 $base-line-height : 21px;
 $small-font-size : 12px;
+$small-line-height : 18px;
 $heading-font-family : $base-font-family;
-$heading-font-weight: 700;
+$heading-font-weight: 600;
 $heading-color : $gray-dark;
+$icon-size: 20px;
 
 // Links
 // -----
@@ -42,22 +43,22 @@ $link-color : $blue;
 // Miscellaneous UI
 // ----------------
 
-$site-background-color: #fff;
+$site-background-color: #fafafa;
 $big-border-radius: 4px;
-$small-border-radius: 2px;
-$border-color: rgba(0,0,0,0.15);
+$small-border-radius: 4px;
+$border-color: rgba(0,0,0,0.13);
 $box-shadow: 0px 1px 1px rgba(0,0,0,0.08);
 
 // Buttons
 // -------
 
 $button-theme: glossy; // Required - can take values of glossy or flat
-$button-height: 30px; // Total height of normal size button
+$button-height: 32px; // Total height of normal size button
 $button-caret-height: 4px;
 $button-font-color: $base-font-color;
-$button-font-family: $base-font-family;
+$button-font-family: $heading-font-family;
 $button-font-size: 12px;
-$button-font-weight: bold;
+$button-font-weight: 600;
 $button-icon-size: 16px;
 $button-solid-background: #e0e0e0; // Solid color for flat buttons and fallback
 $button-highlight: #fbfbfb; // Top gradient stop for glossy theme
@@ -66,10 +67,10 @@ $button-border-color: rgba(0,0,0,0.2); // Border color - ignored when theme is f
 $button-border-width: 1px; // Border width - ignored when theme is flat
 $button-shine: #fff; // 1px shine at top of button and inset text - ignored when theme is flat
 $button-horizontal-padding: $button-font-size;
-$button-border-radius: $big-border-radius;
-$button-box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+$button-border-radius: $small-border-radius;
+$button-box-shadow: 0px 1px 1px rgba(0,0,0,0.08);
 $button-large-height: 40px;
-$button-large-font-size: 18px;
+$button-large-font-size: 16px;
 $button-large-horizontal-padding: 20px;
 $button-small-height: 24px;
 $button-small-font-size: 11px;
@@ -78,7 +79,7 @@ $button-small-horizontal-padding: 11px;
 // Navbar
 // ------
 
-$navbar-background-color: $link-color;
+$navbar-background-color: $gray-dark;
 $navbar-height: 50px;
 $navbar-highlight: #99191C;
 $navbar-lowlight: #6A111A;
@@ -88,8 +89,11 @@ $navbar-branding-font-size: 18px;
 $navbar-caret-height: 5px;
 $navbar-link-horizontal-padding: $navbar-link-font-size;
 
-$vertical-nav-link-font-size: $base-font-size;
-$vertical-nav-link-height: 36px;
+$vertical-nav-link-font-size: 16px;
+$vertical-nav-link-height: 32px;
+
+$mobile-nav-link-font-size: $base-font-size;
+$mobile-nav-link-height: 30px;
 
 // Dropdowns
 // ---------
@@ -114,9 +118,23 @@ $radio-checkbox-item-height: $base-font-size * 2;
 $radio-checkbox-font-size: $base-font-size;
 $radio-checkbox-line-height: $base-line-height;
 $single-checkbox-font-size: $small-font-size;
+$error-color: $red-dark;
 
 // Modals
 // ------
+<<<<<<< HEAD
 
 $modal-padding: 20px;
 $modal-width: 400px;
+=======
+
+$modal-padding: 20px;
+$modal-width: 400px;
+
+// Sprites
+// -------
+
+$sprite-color-size: 300px 300px;
+$sprite-icons-white-size: 300px 300px;
+$sprite-icons-black-size: 300px 300px;
+>>>>>>> Reorganizing into core styles and adding box model helpers.

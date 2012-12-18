@@ -1,13 +1,12 @@
-// Grid
-// ----
+// ! Border-box sizing
+// -----------------
 
 * {
 	@include box-sizing(border-box);
 }
 
-body {
-	overflow-x: hidden;
-}
+// ! Containers
+// ------------
 
 img {
 	display: block;
@@ -19,49 +18,74 @@ img {
 	width: $page-width + ($column-gutter * 2);
 	padding: 0 $column-gutter;
 	margin: 0 auto;
-	
-	@media screen and (max-width: $responsive-breakpoint) {
-		padding: 0 $mobile-padding;
-	}
 }
 
 .responsive {
 	.container {
-		width: auto;
+		
+		width: auto;	
 		max-width: $page-width + ($column-gutter * 2);
-	}
-
-	@media screen and (max-width: $responsive-breakpoint) {
-		[class*="span"] {
-			float: none;
-			width: 100%;
-			padding-left: 0;
-			padding-right: 0;
+		
+		@include respond-to(tablet) {
+			margin: 0;
+			padding: 0 $tablet-padding;
+		}
+	
+		@include respond-to(mobile) {
+			margin: 0;
+			padding: 0 $mobile-padding;
 		}
 	}
 }
+
+// ! Rows
+// ------
 
 .row {
 	@include clearfix();
 	margin-left: -($column-gutter / 2);
 	margin-right: -($column-gutter / 2);
+}
 
-	@media screen and (max-width: $responsive-breakpoint) {
-		margin-left: 0;
-		margin-right: 0;
+
+@include respond-to(mobile) {
+	.responsive {
+		.row {
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
 }
+
+// ! Form field rows
+// -----------------
 
 .field-row {
 	@include clearfix();
 	margin-left: - ($form-input-gutter / 2);
 	margin-right: - ($form-input-gutter / 2);
 
-	@media screen and (max-width: $responsive-breakpoint) {
-		margin-left: 0;
-		margin-right: 0;
+	[class*="span"] {
+		padding: 0 $form-input-gutter / 2;			
+	}	
+}
+
+@include respond-to(mobile) {
+	.responsive {
+		.field-row{
+			margin-left: 0;
+			margin-right: 0;
+			
+			[class*="span"] {
+				padding-left: 0;
+				padding-right: 0;			
+			}			
+		}
 	}
 }
+
+// ! Columns
+// ---------
 
 [class*="span"] {
 	float: left;
@@ -73,32 +97,17 @@ img {
 	}
 }
 
-.field-row {
+.responsive {
 	[class*="span"] {
-		float: left;
-		min-height: 1px;
-		padding: 0 $form-input-gutter / 2;
-
-		@media screen and (max-width: $responsive-breakpoint) {
+		@include respond-to(mobile) {
+			float: none;
+			width: 100%;
 			padding-left: 0;
 			padding-right: 0;
-		}				
-	}	
+		}
+	}
 }
 
 @for $i from 1 through $column-count {
   .span#{$i} { width: ($i / $column-count) * 100% ; }
-}
-
-// Vertical Spacing
-// ----------------
-
-.module {
-	display: block;
-	margin-bottom: $base-line-height;
-}
-
-.block {
-	display: block;
-	margin-bottom: $base-font-size;
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Utilities
 // ---------
 
@@ -40,6 +41,92 @@
 	}
 }
 
+=======
+// ! Type derivative variables
+// ---------------------------
+
+$tu: $base-font-size / 4;
+$base-line-height: $tu * 6;
+
+// ! Pseudo elements
+// -----------------
+
+@mixin pseudo() {
+	content: "";
+	display: block;
+	position: absolute;
+}
+
+// ! CSS triangles
+// ---------------
+
+@mixin css-triangle($triangle-size, $triangle-color, $triangle-direction) {
+	
+	@include pseudo();
+	
+	width: 0;
+	height: 0;
+	border: solid $triangle-size;
+	
+	@if ($triangle-direction == top) {
+		border-color: $triangle-color transparent transparent transparent;
+	}
+	@if ($triangle-direction == bottom) {
+		border-color: transparent transparent $triangle-color transparent;
+	}
+	@if ($triangle-direction == left) {
+		border-color: transparent transparent transparent $triangle-color;
+	}
+	@if ($triangle-direction == right) {
+		border-color: transparent $triangle-color transparent transparent;
+	}
+}
+
+// ! List operations
+// -----------------
+
+@mixin list-reset {
+	margin-left: 0px;
+	
+	> li {
+		display: block;
+		list-style-type: none;	
+	}
+}
+
+@mixin list-horizontal {
+	@include clearfix();
+	
+	> li {
+		display: block;
+		float: left;
+		list-style-type: none;
+	}
+}
+
+// ! Floats
+// --------
+
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.float-none {
+	float: none;
+}
+.block {
+	display: block;
+}
+.nowrap {
+	overflow: hidden;
+}
+
+// ! Clearfix
+// ----------
+
+>>>>>>> Reorganizing into core styles and adding box model helpers.
 @mixin clearfix {
     &:before,
     &:after {
@@ -56,6 +143,7 @@
 	@include clearfix();
 }
 
+<<<<<<< HEAD
 @mixin list-reset {
 	margin-left: 0px;
 	
@@ -104,4 +192,122 @@
 	content: "";
 	display: block;
 	position: absolute;
+=======
+// ! Type helper classes
+// ---------------------
+
+.bold, strong {
+	font-weight: bold;
+}
+
+.ellipsis {
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.italic, em {
+	font-style: italic;
+}
+
+.lh1 {
+	line-height: 1 !important;
+}
+
+.muted {
+	color: $muted-font-color;
+}
+
+.small {
+	font-family: $base-font-family;
+	font-size: $small-font-size;
+	font-weight: normal;
+	line-height: $small-line-height;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-centered {
+	text-align: center;
+}
+
+.underlined {
+	text-decoration: underline;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+// ! Images
+// --------
+
+img {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	
+	&.native-width {
+		width: auto;
+	}
+}
+
+// ! Responsive helper variables
+// -----------------------------
+
+$mobile-end: $responsive-breakpoint;
+$tablet-start: $mobile-end + 1;
+$tablet-end: $page-width + ($column-gutter * 2);
+$desktop-start: $tablet-end + 1;
+
+// ! Respond to device mixins
+// --------------------------
+
+@mixin respond-to($device) {
+	
+	@if $device == "desktop" {
+		@media screen and (min-width: $desktop-start) { @content }
+	}
+	
+	@if $device == "tablet-desktop" {
+		@media screen and (min-width: $tablet-start) { @content }
+	}
+	
+	@if $device == "tablet" {
+		@media screen and (min-width: $tablet-start) and (max-width: $tablet-end) { @content }
+	}
+	
+	@if $device == "mobile-tablet" {
+		@media screen and (max-width: $tablet-end) { @content }
+	}
+	
+	@if $device == "mobile" {
+		@media screen and (max-width: $mobile-end) { @content }
+	}
+}
+
+// ! Show or hide on device
+// ------------------------
+
+.show-on-mobile,
+.show-on-mobile-tablet,
+.show-on-tablet,
+.show-on-tablet-desktop,
+.show-on-desktop {
+	display: none !important;
+}
+
+@each $device in mobile, mobile-tablet, tablet, tablet-desktop, desktop {
+	@include respond-to($device) {
+		.show-on-#{$device} { display: inherit !important; }
+		.hide-on-#{$device} { display: none !important; }
+	}
+>>>>>>> Reorganizing into core styles and adding box model helpers.
 }

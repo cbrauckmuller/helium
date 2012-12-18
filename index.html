@@ -19,11 +19,11 @@
 		<div id="viewport">
 		<div id="page">
 	
-			<nav id="page-nav" class="top-bar">
+			<nav id="page-nav">
 				
 				<div class="container">
 				
-					<div id="nav-branding" class="top-bar-section float-left">
+					<div id="nav-branding" class="float-left">
 						<a>Helium</a>
 					</div>
 					
@@ -31,7 +31,7 @@
 					
 					<div id="nav-collapse">
 					
-						<ul id="nav-site" class="top-bar-links top-bar-section float-left">
+						<ul id="nav-site" class="nav-section float-left">
 							<li class="active"><a href="#">Home</a></li>
 							<li class="has-dropdown">
 								<a href="#" data-toggle="dropdown">Products <span class="caret"></span></a>
@@ -52,28 +52,12 @@
 							</li>
 							<li><a href="#">How It Works</a></li>
 							<li><a href="#">About</a></li>
-							<li class="mobile-only"><a href="#">Portfolio</a></li>
-							<li class="mobile-only"><a href="#">Account</a></li>
-							<li class="mobile-only"><a href="#">Log out</a></li>
-							
 						</ul>
 						
-						<div id="nav-auth" class="top-bar-section float-right">
-							<a class="button">Log in</a>
-							<a class="button">Sign up</a>
+						<div id="nav-auth" class="nav-section float-right">
+							<a class="button" href="#">Log in</a>
+							<a class="button" href="#">Sign up</a>
 						</div>
-						
-						<!--<ul id="nav-logged-in" class="top-bar-links top-bar-section float-right">
-							<li class="has-dropdown">
-								<a href="#" data-toggle="dropdown">Chris <span class="caret"></span></a>
-								
-								<ul class="dropdown right">
-									<li><a href="#">My Portfolio</a></li>
-									<li><a href="#">Account Settings</a>
-									<li><a href="#">Sign Out</a></li>
-								</ul>
-							</li>
-						</ul>-->
 					
 					</div>
 									
@@ -85,13 +69,11 @@
 			
 				<div class="container">
 					
-					<hgroup class="module">
+					<hgroup>
 						<h1>Build faster with&nbsp;Helium.</h1>
 						<h2>The responsive frontend that won&rsquo;t weigh you&nbsp;down</h2>
 					</hgroup>
-	
-					<hr>
-	
+		
 				</div><!--end container-->
 			
 			</header><!--end page-header-->
@@ -103,44 +85,33 @@
 					<div class="row">
 						
 						<div class="span4">
-							<div class="module">
-								<h2>Here&rsquo;s a Column</h2>
-								<p>Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								<div class="block">
-									<a class="button" href="#">Check my swag</a>
-								</div><!--end block-->
+							<h2>Here&rsquo;s a Column</h2>
+							<p>Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<div>
+								<a class="button" href="#">Check my swag</a>
 							</div>
 						</div>
 		
 						<div class="span4">
-							<div class="module">
-								<h2>Here&rsquo;s Another</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, <em>sed do eiusmod tempor</em> incididunt ut labore et dolore magna aliqua.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								<div class="block">
-									<a class="button" href="#">Buttons like a boss</a>
-								</div>
+							<h2>Here&rsquo;s a Column</h2>
+							<p>Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<div>
+								<a class="button" href="#">Check my swag</a>
 							</div>
 						</div>
 		
 						<div class="span4">
-							<div class="module">
-								<h2>Wait, One More!</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, <strong>sed do eiusmod tempor</strong> incididunt ut labore et dolore magna aliqua.</p>
-								<ul>
-									<li>Here is a list item.</li>
-									<li>Here is a list item.</li>
-									<li>Here is a list item.</li>
-									<li>Here is a list item.</li>
-									<li>Here is a list item.</li>
-								</ul>
+							<h2>Here&rsquo;s a Column</h2>
+							<p>Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<div>
+								<a class="button" href="#">Check my swag</a>
 							</div>
 						</div>
 					</div>
-					
-					<hr>
-		
+							
 				</div><!--end container-->
 			
 			</div><!--end main-content-->
@@ -152,94 +123,77 @@
 					<div class="row">
 						
 						<div class="span6">
-							
-							<ul class="tabs module">
-								<li class="active"><a data-toggle="tab" href="#concepts">37 Ideas</a></li>
-								<li><a data-toggle="tab" href="#comments">15 Comments</a></li>
-								<li><a data-toggle="tab" href="#about-the-property">About the Property</a></li>
-							</ul>
-							
-							<div class="module box">
-								<h2>The Noble Gases</h2>
+
+							<h2>The Noble Gases</h2>	
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Symbol</th>
+										<th>Uses</th>
+										<th class="figure">Atomic No.</th>
+									</tr>
+								</thead>
 								
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Symbol</th>
-											<th>Uses</th>
-											<th class="figure">Atomic No.</th>
-										</tr>
-									</thead>
-									
-									<tbody>
-										<tr>
-											<td><a href="#">Helium</a></td>
-											<td>He</td>
-											<td>Balloons &amp; blimps</td>
-											<td class="figure">2</td>
-										</tr>
-										<tr>
-											<td><a href="#">Neon</a></td>
-											<td>Ne</td>
-											<td>Beer/stripper signs</td>
-											<td class="figure">10</td>
-										</tr>
-										<tr>
-											<td><a href="#">Argon</a></td>
-											<td>He</td>
-											<td>Welding torches</td>
-											<td class="figure">18</td>
-										</tr>
-										<tr>
-											<td><a href="#">Krypton</a></td>
-											<td>He</td>
-											<td>Fighting Superman</td>
-											<td class="figure">36</td>
-										</tr>
-										<tr>
-											<td><a href="#">Xenon</a></td>
-											<td>He</td>
-											<td>Fancy car headlights</td>
-											<td class="figure">54</td>
-										</tr>
-										<tr>
-											<td><a href="#">Radon</a></td>
-											<td>Rn</td>
-											<td>Poisoning the earth</td>
-											<td class="figure">86</td>
-										</tr>
-									</tbody>
-								</table>
-							</div><!--end module-->
+								<tbody>
+									<tr>
+										<td><a href="#">Helium</a></td>
+										<td>He</td>
+										<td>Balloons &amp; blimps</td>
+										<td class="figure">2</td>
+									</tr>
+									<tr>
+										<td><a href="#">Neon</a></td>
+										<td>Ne</td>
+										<td>Beer/stripper signs</td>
+										<td class="figure">10</td>
+									</tr>
+									<tr>
+										<td><a href="#">Argon</a></td>
+										<td>He</td>
+										<td>Welding torches</td>
+										<td class="figure">18</td>
+									</tr>
+									<tr>
+										<td><a href="#">Krypton</a></td>
+										<td>He</td>
+										<td>Fighting Superman</td>
+										<td class="figure">36</td>
+									</tr>
+									<tr>
+										<td><a href="#">Xenon</a></td>
+										<td>He</td>
+										<td>Fancy car headlights</td>
+										<td class="figure">54</td>
+									</tr>
+									<tr>
+										<td><a href="#">Radon</a></td>
+										<td>Rn</td>
+										<td>Poisoning the earth</td>
+										<td class="figure">86</td>
+									</tr>
+								</tbody>
+							</table>
+
+
 						</div><!--end span6-->
 		
 						<div class="span3">
-							<div class="module">
-								<h3>Wait, a Third</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
-							</div><!--end module-->
+							<h3>Wait, a Third</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
 							
-							<div class="module">
-								<h3>Wait, a Third</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
-							</div><!--end module-->
+							<h3>Wait, a Third</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
 						</div><!--end span3-->
 	
 						<div class="span3">
-							<div class="module">
-								<h3>Dang, a Fourth</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
-							</div><!--end module-->
+							<h3>Wait, a Third</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
 							
-							<div class="module">
-								<h3>Wait, a Third</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
-							</div><!--end module-->
+							<h3>Wait, a Third</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
 						</div><!--end span3-->
 					</div><!--end row-->
-	
-					<hr>
 	
 				</div><!--end container-->
 			</div><!--end region-->
@@ -251,37 +205,27 @@
 					<div class="row">
 	
 						<div class="span3">
-							<div class="module">
-								<h3>Footer Subhead</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
-							</div><!--end module-->
+							<h3>Footer Subhead</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
 						</div><!--end span3-->
 						
 						<div class="span3">
-							<div class="module">
-								<h3>Footer Subhead</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
-							</div><!--end module-->
+							<h3>Footer Subhead</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
 						</div><!--end span3-->
 						
 						<div class="span3">
-							<div class="module">
-								<h3>Footer Subhead</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
-							</div><!--end module-->
+							<h3>Footer Subhead</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
 						</div><!--end span3-->
 						
 						<div class="span3">
-							<div class="module">
-								<h3>Footer Subhead</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
-							</div><!--end module-->
+							<h3>Footer Subhead</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a.</p>
 						</div><!--end span3-->
 	
 					</div>
-	
-					<hr>
-	
+		
 				</div><!--end container-->
 			
 			</footer><!--end page-footer-->
