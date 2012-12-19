@@ -156,24 +156,25 @@
 	.top-bar {
 	
 		.top-bar-links {
+			padding: $tu * 2 0;
+			
 			> li {
 				float: none;
 				
 				> a {
 					height: $mobile-nav-link-height;
 					padding: ($mobile-nav-link-height - $mobile-nav-link-font-size) / 2 $base-font-size;
-					border-top: 1px solid $border-color;
 					color: $base-font-color;
 					
 					&:hover {
-						background: darken(#fff, 10%);
-						color: $base-font-color;
+						background: $blue;
+						color: #fff;
 					}
 				}
 				
 				&.active {
 					> a {
-						background: $gray-dark;
+						background: $blue;
 						color: #fff;
 						
 						&:after {
@@ -187,6 +188,14 @@
 						border-top-color: transparent;
 					}
 				}
+				
+				&.has-dropdown {
+					> a {
+						.caret {
+							display: none;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -194,18 +203,6 @@
 	.open {
 		#nav-collapse {
 			display: block;
-		}
-		
-		#nav-toggle {
-			position: relative;
-			
-			&:after {
-				@include pseudo();
-				@include css-triangle(10px, $gray-dark, bottom);
-				top: $button-height;
-				left: 50%;
-				margin-left: -10px;
-			}
 		}
 	}
 }
