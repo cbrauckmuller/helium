@@ -1,47 +1,3 @@
-<<<<<<< HEAD
-// Utilities
-// ---------
-
-.float-left {
-	float: left;
-}
-.float-right {
-	float: right;
-}
-.text-left {
-	text-align: left;
-}
-.text-right {
-	text-align: right;
-}
-.text-centered {
-	text-align: center;
-}
-
-.desktop-only {		
-	@media screen and (max-width: $responsive-breakpoint) {
-		display: none !important;
-	}
-}
-
-.mobile-only {	
-	@media screen and (min-width: $responsive-breakpoint + 1) {
-		display: none !important;
-	}
-}
-
-@mixin respond-to($device) {
-	
-	@if device == "desktop" {
-		@media screen and (min-width: $responsive-breakpoint + 1) { @content }
-	}
-	
-	@if device == "mobile" {
-		@media screen and (max-width: $responsive-breakpoint) { @content }
-	}
-}
-
-=======
 // ! Type derivative variables
 // ---------------------------
 
@@ -126,7 +82,6 @@ $base-line-height: $tu * 6;
 // ! Clearfix
 // ----------
 
->>>>>>> Reorganizing into core styles and adding box model helpers.
 @mixin clearfix {
     &:before,
     &:after {
@@ -143,56 +98,6 @@ $base-line-height: $tu * 6;
 	@include clearfix();
 }
 
-<<<<<<< HEAD
-@mixin list-reset {
-	margin-left: 0px;
-	
-	> li {
-		display: block;
-		list-style-type: none;	
-	}
-}
-
-@mixin list-horizontal {
-	@include clearfix();
-	
-	> li {
-		float: left;	
-	}
-}
-
-// CSS Triangles
-// -------------
-
-@mixin css-triangle($triangle-size, $triangle-color, $triangle-direction) {
-	content: "";
-	display: block;
-	width: 0;
-	height: 0;
-	border: solid $triangle-size;
-	
-	@if ($triangle-direction == top) {
-		border-color: $triangle-color transparent transparent transparent;
-	}
-	@if ($triangle-direction == bottom) {
-		border-color: transparent transparent $triangle-color transparent;
-	}
-	@if ($triangle-direction == left) {
-		border-color: transparent transparent transparent $triangle-color;
-	}
-	@if ($triangle-direction == right) {
-		border-color: transparent $triangle-color transparent transparent;
-	}
-}
-
-// Pseudo Elements
-// ---------------
-
-@mixin pseudo() {
-	content: "";
-	display: block;
-	position: absolute;
-=======
 // ! Type helper classes
 // ---------------------
 
@@ -262,6 +167,7 @@ img {
 // ! Responsive helper variables
 // -----------------------------
 
+$devices: mobile, mobile-tablet, tablet, tablet-desktop, desktop;
 $mobile-end: $responsive-breakpoint;
 $tablet-start: $mobile-end + 1;
 $tablet-end: $page-width + ($column-gutter * 2);
@@ -304,10 +210,52 @@ $desktop-start: $tablet-end + 1;
 	display: none !important;
 }
 
-@each $device in mobile, mobile-tablet, tablet, tablet-desktop, desktop {
+@each $device in $devices {
 	@include respond-to($device) {
 		.show-on-#{$device} { display: inherit !important; }
 		.hide-on-#{$device} { display: none !important; }
 	}
->>>>>>> Reorganizing into core styles and adding box model helpers.
+}
+
+// ! Box model helpers
+// -------------------
+
+$x-sides: (l left), (r right);
+$y-sides: (t top), (b bottom);
+$spacing-types: (m margin), (p padding);
+
+// ! Margin and padding
+// --------------------
+
+@each $spacing-type in $spacing-types {
+	@for $i from 0 through 10 {
+		@each $side in join($x-sides, $y-sides) {
+			.#{nth($spacing-type, 1)}#{nth($side, 1)}#{$i} {
+				#{nth($spacing-type, 2)}-#{nth($side, 2)}: $tu * $i !important;
+			}
+		}
+	}
+}
+
+// ! Borders
+// ---------
+
+@each $side in join($x-sides, $y-sides) {
+	.b#{nth($side, 1)} {
+		border-#{nth($side, 2)}: 1px solid $border-color;
+	}
+}
+
+// ! Sticky footer
+// ---------------
+
+.sticky-footer {
+	#footer-pusher {
+		height: auto;
+		min-height: 100%;	
+	}
+	
+	#page-footer {
+		position: relative;
+	}
 }

@@ -25,7 +25,7 @@ $tablet-padding: 20px; // Distance from content to edge of screen on tablet
 
 $base-font-color : $gray;
 $muted-font-color : $gray-light;
-$base-font-family: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$base-font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $base-font-size : 14px;
 $base-line-height : 21px;
 $small-font-size : 12px;
@@ -122,11 +122,6 @@ $error-color: $red-dark;
 
 // Modals
 // ------
-<<<<<<< HEAD
-
-$modal-padding: 20px;
-$modal-width: 400px;
-=======
 
 $modal-padding: 20px;
 $modal-width: 400px;
@@ -137,4 +132,3 @@ $modal-width: 400px;
 $sprite-color-size: 300px 300px;
 $sprite-icons-white-size: 300px 300px;
 $sprite-icons-black-size: 300px 300px;
->>>>>>> Reorganizing into core styles and adding box model helpers.

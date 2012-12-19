@@ -116,14 +116,12 @@
 	}
 }
 
-// Navbar fixed to the top of the viewport
-// ---------------------------------------
+// ! Top bar fixed to top of viewport
+// ----------------------------------
 
-.fixed-page-nav { // Goes on the body
+.fixed-top-bar { // Goes on the body
 	
-	#viewport {
-		padding-top: $navbar-height;
-	}
+	padding-top: $navbar-height;
 	
 	.top-bar {
 		position: fixed;
@@ -134,149 +132,13 @@
 	}
 }
 
-// Responsive styles for navbar
-// ----------------------------
+// ! Responsive top bar
+// --------------------
 
-@media screen and (max-width: $responsive-breakpoint) {	
-	
-	#viewport {
-		width: 100%;
-		overflow-x: hidden;
-		background: #777;
-		
-		#page {
-			@include transition(0.2s left);
-			width: 100%;
-			position: relative;
-			left: 0;
-			background: #fff;
-		}
-		
-		#page-nav {
-			@include transition(0.2s left);
-		}
-	}
-	
-	.mobile-nav-expanded {
-		
-		overflow-y: hidden;
-		
-		#viewport {
 
-			#page {
-				left: -200px;
-			}
-		}
-		
-		&.fixed-page-nav {
-			#page-nav {
-				left: -200px;
-			}
-		}
-	}
 
-	.responsive {
-		
-		.top-bar {
-			
-			#nav-branding {
-				float: left;
-			}
-			
-			.top-bar-links {
-				> li {
-					float: none;
-					
-					> a {
-						height: $vertical-nav-link-height;
-						padding: ($vertical-nav-link-height - $vertical-nav-link-font-size) / 2 0;
-						border-top: 1px solid $border-color;
-					}
-				}
-			}
-			
-			#nav-toggle {
-				display: block;
-			}
-			
-			#nav-collapse {
-				position: absolute;
-				width: 200px;
-				right: -200px;
-				top: $navbar-height + 20px;
-				
-				.top-bar-section {
-					padding: 0 20px;
-				}
-				
-				.top-bar-links {
-					
-					> li.active {
-						> a {
-							position: relative;
-							background: none;
-							
-							&:before {
-								@include pseudo();
-								@include css-triangle(10px, $navbar-link-color, left);
-								left: -20px;
-								top: 50%;
-								margin-top: -10px;
-							}
-						}
-					}
-				}
-			}
-			
-			.top-bar-section {
-				&.float-left, &.float-right {
-					float: none;
-				}
-				
-				&:last-child {
-					padding-bottom: $mobile-padding;
-				}
-			}
-			
-			.has-dropdown {
-				&.open {
-					> a {
-						background: none !important;
-						color: #fff !important;
-						
-						&:after {
-							display: none;
-						}
-					}
-				}
-			}
-			
-			.dropdown {
-				position: static;
-				display: none;
-				visibility: visible;
-				background: none;
-				border: none;
-				@include box-shadow(none);
-				color: #fff !important;
-				
-				> li {
-					> a {
-						color: #fff;
-						font-size: 12px;
-					}
-				}
-			}
-			
-			.open .dropdown {
-				display: block;
-			}
-		}
-	}
-}
-
-// Tabs
-// ----
+// ! Tabs
+// ------
 
 .tabs {
 	margin-left: 0;

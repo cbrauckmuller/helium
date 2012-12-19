@@ -17,7 +17,7 @@
 	}
 	
 	@if $theme == "flat" {
-		border-color: transparent;
+		border-color: $button-border-color;
 	}
 }
 
