@@ -28,10 +28,6 @@
 			}
 		}
 	}
-	
-	#nav-toggle {
-		display: none;
-	}
 
 	.top-bar-links {
 		@include list-reset();
@@ -49,7 +45,7 @@
 				line-height: 1;
 				
 				&:hover {
-					background-color: darken($link-color, 10%);
+					background-color: darken($navbar-background-color, 10%);
 					text-decoration: none;
 				}
 				
@@ -60,7 +56,7 @@
 			
 			&.active {
 				a {
-					background-color: darken($link-color, 10%);
+					background-color: darken($navbar-background-color, 10%);
 				}
 			}
 			
@@ -109,7 +105,7 @@
 		
 		@include button-custom(
 			$theme: $button-theme, 
-			$background-color: darken($navbar-background-color, 5%), 
+			$background-color: lighten($navbar-background-color, 5%), 
 			$text-color: #fff, 
 			$reversed: true	
 		);
@@ -135,7 +131,84 @@
 // ! Responsive top bar
 // --------------------
 
-
+@include respond-to(mobile) {
+	
+	#nav-collapse {
+		display: none;
+		position: absolute;
+		top: $navbar-height + 10px;
+		right: $mobile-padding;
+		min-width: 10em;
+		background: #fff;
+		border: 1px solid $border-color;
+		@include border-radius($big-border-radius);
+		@include box-shadow(0px 2px 8px rgba(0,0,0,0.2));
+	}
+	
+	#nav-auth {
+		display: none;
+	}
+	
+	#nav-site {
+		float: none;
+	}
+	
+	.top-bar {
+	
+		.top-bar-links {
+			> li {
+				float: none;
+				
+				> a {
+					height: $mobile-nav-link-height;
+					padding: ($mobile-nav-link-height - $mobile-nav-link-font-size) / 2 $base-font-size;
+					border-top: 1px solid $border-color;
+					color: $base-font-color;
+					
+					&:hover {
+						background: darken(#fff, 10%);
+						color: $base-font-color;
+					}
+				}
+				
+				&.active {
+					> a {
+						background: $gray-dark;
+						color: #fff;
+						
+						&:after {
+							display: none;
+						}
+					}
+				}
+				
+				&:first-child {
+					> a {
+						border-top-color: transparent;
+					}
+				}
+			}
+		}
+	}
+	
+	.open {
+		#nav-collapse {
+			display: block;
+		}
+		
+		#nav-toggle {
+			position: relative;
+			
+			&:after {
+				@include pseudo();
+				@include css-triangle(10px, $gray-dark, bottom);
+				top: $button-height;
+				left: 50%;
+				margin-left: -10px;
+			}
+		}
+	}
+}
 
 // ! Tabs
 // ------
