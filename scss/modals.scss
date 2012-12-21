@@ -131,7 +131,7 @@
 
 .close {
   position: absolute;
-  top: $modal-padding;
+  top: $modal-padding - 3;
   right: $modal-padding;
   font-size: 20px;
   font-weight: bold;

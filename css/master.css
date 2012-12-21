@@ -573,6 +573,27 @@ img.native-width {
   position: relative;
 }
 
+@media screen and (max-width: 980px) {
+  .max-50 {
+    max-width: 50%;
+  }
+
+  .max-40 {
+    max-width: 40%;
+  }
+
+  .max-30 {
+    max-width: 30%;
+  }
+
+  .max-20 {
+    max-width: 20%;
+  }
+
+  .max-10 {
+    max-width: 10%;
+  }
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1359,6 +1380,10 @@ input::-moz-focus-inner {
   -moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.15);
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.15);
 }
+.button.button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 .has-dropdown.button-dropdown {
   display: inline-block;
@@ -1997,7 +2022,7 @@ input::-moz-focus-inner {
 }
 .close {
   position: absolute;
-  top: 20px;
+  top: 17px;
   right: 20px;
   font-size: 20px;
   font-weight: bold;

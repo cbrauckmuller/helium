@@ -259,3 +259,14 @@ $spacing-types: (m margin), (p padding);
 		position: relative;
 	}
 }
+
+// ! Max widths
+// ------------
+
+@include respond-to(mobile-tablet) {
+	$i: 50;
+	@while $i > 0 {
+		.max-#{$i} { max-width: 1% * $i; }
+		$i: $i - 10;
+	}
+}
