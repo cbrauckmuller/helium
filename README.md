@@ -4,9 +4,9 @@ See a demo - check out Helium in action over at https://fundrise.com
 
 Helium is a frontend responsive web framework for rapid prototyping and production-ready development using HTML5 and CSS3. In many ways it is similar to both Twitter Bootstrap and ZURB Foundation - in fact, it uses bits of their code. Unlike either of these two frameworks, however, Helium is designed to be much more lightweight and easier to tinker with. Think of it as a classic car where you can pop open the hood and easily work on the engine. The compiled default CSS file weighs in at a comparatively tiny 30k, versus approximately 100k for Bootstrap and almost 200k for Foundation.
 
-## Built with SASS + Compass
+## Built with Sass + Compass
 
-Helium is built using SASS and Compass. I chose this preprocessor and mixin library, respectively, because they make working with CSS3 a lot easier than any other combination I have encountered to date.
+Helium is built using Sass and Compass. I chose this preprocessor and mixin library, respectively, because they make working with CSS3 a lot easier than any other combination I have encountered to date.
 
 ## Install Helium
 
@@ -22,9 +22,9 @@ By default, Helium uses a fixed-width layout. However, making it responsive is a
 
 	<body class="responsive">
 
-## SASS Variables
+## Sass Variables
 
-There are three SASS variables that will determine the makeup of your grid. As with nearly every other variable in Helium, these are stored in `scss/config.scss`
+There are three Sass variables that will determine the makeup of your grid. As with nearly every other variable in Helium, these are stored in `scss/config.scss`
 
 ### $page-width
 
