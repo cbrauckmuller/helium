@@ -1,4 +1,4 @@
-Check out Helium in action over at https://fundrise.com
+See a demo - check out Helium in action over at https://fundrise.com
 
 #Welcome to Helium
 
