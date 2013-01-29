@@ -1,4 +1,4 @@
-// Forms
+// ! Forms
 // -----
 
 label,
@@ -10,7 +10,7 @@ textarea {
 	font-weight: normal;
 }
 
-// Basic form layouts
+// ! Basic form layouts
 // ------------------
 
 .field-group {
@@ -24,12 +24,36 @@ textarea {
 	.field-instructions {
 		float: none;
 		clear: both;
+		padding-top: ($small-line-height - $small-font-size) / 2;
 		color: $muted-font-color;
 		font-size: $small-font-size;
-		
+		line-height: 1.5;
+
 		a {
 			color: $muted-font-color;
 			text-decoration: underline;
+		}
+	}
+	
+	.fields {
+		@include respond-to(desktop) {
+			position: relative;
+			
+			.error-message {
+				position: absolute;
+				left: 100%;
+				top: 2px;
+				margin-top: 0;
+				margin-left: 12px;
+				white-space: nowrap;
+
+				&:after {
+					position: absolute;
+					top: 6px;
+					left: -12px;
+					@include css-triangle(6px, $error-color, right)
+				}
+			}
 		}
 	}
 }
@@ -50,7 +74,7 @@ textarea {
 	}
 }
 
-// Left-aligned labels
+// ! Left-aligned labels
 // -------------------
 
 
@@ -65,17 +89,18 @@ textarea {
 		.field-label {
 			position: relative;
 			left: $form-input-gutter / 2;
-			line-height: $base-font-size + 2;
 			padding: ($form-input-height - ($base-font-size + 2)) / 2 0;
+			line-height: $base-font-size + 2;
 			text-align: right;
 		}
 	}
 }
 
-// Text fields and textareas
-// -------------------------
+// ! Text fields and textareas
+// ---------------------------
 
 textarea,
+.select-mask,
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -99,12 +124,14 @@ input[type="color"] {
 	width: 100%;
 	max-width: 100%;
 	padding: 0 $base-font-size / 2;
+	background: #fff;
 	border: 1px solid rgba(0,0,0,0.25);
 
 	outline: none;
 	-webkit-appearance: none;
 	
-	&:focus {
+	&:focus,
+	&.focus {
 		border-color: $link-color;
 		@include box-shadow(0px 0px 3px rgba($link-color, 0.3));	
 	}
@@ -124,21 +151,53 @@ textarea {
 	padding: $base-font-size / 2;
 }
 
-@for $i from 1 through 10 {
-  input.char#{$i} { width: ($i * ($base-font-size * 0.75)) + $base-font-size ; }
+@for $i from 1 through 16 {
+  input.char#{$i} { width: ($i * ($base-font-size * 0.75)) + $base-font-size !important; }
 }
 
-// Special positioning for select
-// ------------------------------
+// ! Special masking for select
+// ----------------------------
 
 .select-holder {
 	height: $form-input-height;
-	display: table-cell;
-	vertical-align: middle;
+	position: relative;
 }
 
-// Placeholders
-// ------------
+select {
+	opacity: 0;
+	display: block;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: $form-input-height;
+	font-size: $base-font-size;
+	padding: 0 $base-font-size / 2;
+	-webkit-appearance: none;
+	
+	option {
+		font-size: 11px;
+	}
+}
+
+.select-mask {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	background: #fff;
+	padding-top: 7px;
+	line-height: 1;
+	
+	&:after {
+		@include css-triangle(5px, $gray-dark, top);
+		position: absolute;
+		top: 12px;
+		right: 10px;
+	}
+}
+
+// ! Placeholders
+// --------------
 
 ::-webkit-input-placeholder {
 	color: $placeholder-color; 
@@ -158,8 +217,8 @@ textarea {
 	color: $placeholder-focus-color;
 }
 
-// Radio and checkbox
-// ------------------
+// ! Radio and checkbox
+// --------------------
 
 input[type=radio],
 input[type=checkbox] {
@@ -167,12 +226,11 @@ input[type=checkbox] {
 	cursor: pointer;
 }
 
-// Radio and checkbox lists
-// ------------------------
+// ! Radio and checkbox lists
+// --------------------------
 
 .radio-checkbox-list {
 	@include list-reset();
-	margin-bottom: 0;
 		
 	> li {
 		padding: ($radio-checkbox-item-height - $radio-checkbox-line-height) / 2 0;
@@ -186,11 +244,19 @@ input[type=checkbox] {
 		left: 0px;
 	}
 	
-	label {
+	.radio-checkbox-label {
 		display: block;
 		position: relative;
 		padding-left: $radio-checkbox-input-height * 1.61;
 		cursor: pointer;
+
+		&.small {
+
+			input[type=radio],
+			input[type=checkbox] {
+				top: ($small-line-height - $radio-checkbox-input-height) / 2;
+			}
+		}
 	}
 	
 	.error-message {
@@ -198,8 +264,8 @@ input[type=checkbox] {
 	}
 }
 
-// Single checkboxes
-// -----------------
+// ! Single checkboxes
+// -------------------
 
 .single-checkbox {
 	display: block;
@@ -222,8 +288,8 @@ input[type=checkbox] {
 	}
 }
 
-// Buttons 
-// -------
+// ! Buttons 
+// ---------
 
 button {
 	margin: 0;
@@ -239,8 +305,8 @@ input::-moz-focus-inner {
   border: 0;
 }
 
-// Errors
-// ------
+// ! Errors
+// --------
 
 .error {
 	label {
@@ -250,23 +316,24 @@ input::-moz-focus-inner {
 	input {
 		border-color: $error-color;
 	}
-	.error-message {
-		@include border-radius($input-border-radius);
-		
-		display: inline-block;
-		position: relative;
-		margin-top: $base-font-size / 2;
-		padding: $base-font-size / 2;
-		background: $error-color;
-		color: #fff;
-		font-size: $small-font-size;
-		line-height: $small-font-size;
-		
-		&:after {
-			position: absolute;
-			top: -12px;
-			left: 10px;
-			@include css-triangle(6px, $error-color, bottom)
-		}
+}
+
+.error-message {
+	@include border-radius($input-border-radius);
+	
+	display: inline-block;
+	position: relative;
+	margin-top: $base-font-size / 2;
+	padding: $base-font-size / 2;
+	background: $error-color;
+	color: #fff;
+	font-size: $small-font-size;
+	line-height: $small-font-size;
+	
+	&:after {
+		position: absolute;
+		top: -12px;
+		left: 10px;
+		@include css-triangle(6px, $error-color, bottom)
 	}
 }
