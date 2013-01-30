@@ -107,7 +107,9 @@ These work great for toolbars, sub-navigation, toggling view options, etc.
 ```html
 <div class="button-group">
 	<a class="button">One if by land</a>
+
 	<a class="button">Two if by sea</a>
+
 	<a class="button">Three if by teleporter</a>
 </div>
 ```
@@ -201,7 +203,7 @@ Forms in Helium are split into `field-group` elements which consist of a `field-
 		<label class="field-label">Email address</label>
 			
 		<div class="fields">
-			<input type="email" placeholder="name@example.com">
+			<input type="email" placeholder="name@example.com" />
 		</div>
 	</div>
 </form>
@@ -221,7 +223,7 @@ Putting labels to the left of fields is as simple as adding the `labels-left` cl
 
 			<div class="span9">								
 				<div class="fields">
-					<input type="text">
+					<input type="text" />
 				</div>
 			</div>
 		</div>
@@ -241,11 +243,9 @@ This is useful for additional, clarifying instructions that won't fit in the lab
 
 ```html
 <div class="fields">
-	<input type="number">
+	<input type="number" />
 
-	<div class="field-instructions block">
-		This is a small 3 digit number on the back of your card.
-	</div>
+	<div class="field-instructions block">This is a small 3 digit number on the back of your card.</div>
 </div>
 ```
 
