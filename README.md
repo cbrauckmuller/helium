@@ -1,6 +1,6 @@
 See a demo - check out Helium in action over at https://fundrise.com
 
-#Welcome to Helium
+# Welcome to Helium
 
 Helium is a frontend responsive web framework for rapid prototyping and production-ready development using HTML5 and CSS3. In many ways it is similar to both Twitter Bootstrap and ZURB Foundation - in fact, it uses bits of their code. Unlike either of these two frameworks, however, Helium is designed to be much more lightweight and easier to tinker with. Think of it as a classic car where you can pop open the hood and easily work on the engine. The compiled default CSS file weighs in at a comparatively tiny 30k, versus approximately 100k for Bootstrap and almost 200k for Foundation.
 
@@ -18,7 +18,7 @@ Helium uses a nestable grid based on fluid-width columns, based largely off the 
 
 ## Selectively Responsive
 
-By default, Helium uses a fixed-width layout. However, making it responsive is as simple as adding a class of `responsive` to the `<body>` element of your page. Responsive design is by its nature rather resource-intensive, so I built Helium to allow you to toggle responsive behavior on a per page basis so you can build out responsive pages as time and budgets permit. You can also use the `responsive` class as a hook to target only responsive pages with your SCSS. 
+By default, Helium uses a fixed-width layout. However, making it responsive is as simple as adding a class of `responsive` to the `<body>` element of your page. Responsive design is by its nature rather resource-intensive, so I built Helium to allow you to toggle responsive behavior on a per page basis so you can build out responsive pages as time and budgets permit. You can also use the `responsive` class as a hook to target only responsive pages with your SCSS.
 
 	<body class="responsive">
 
@@ -48,10 +48,10 @@ The markup for building a grid in Helium is very lightweight and should look fam
 		<div class="row">
 			<div class="span4">
 			</div>
-			
+
 			<div class="span4">
 			</div>
-			
+
 			<div class="span4">
 			</div>
 		</div>
@@ -73,21 +73,21 @@ Buttons are a big component of any UI. Helium tries to include many common butto
 A clean, uniform button style for all kinds of UI tasks. Keep in mind that you can use the `button` class on both `<a>` and `<button>` elements.
 
 	<a class="button">Here's a button</a>
-	
+
 	<button class="button">Here's another</button>
-	
+
 ## Large buttons
 
 Often times, you want your primary call to action button to be larger than other UI buttons. Just append an additional class of `button-large`.
 
 	<a class="button button-large">I’m a call to action!</a>
-	
+
 ## Small buttons
 
 Sometimes you need to fit buttons in a smaller space or de-emphasize them. Just append a class of `button-small`.
 
 	<a class="button button-small">I'm a small button</a>
-	
+
 ## Pill buttons
 
 Perfect for centered buttons or buttons that hang out by themselves. Just append a class of `button-pill`.
@@ -109,19 +109,19 @@ These work great for toolbars, sub-navigation, toggling view options, etc.
 It’s easy to add an icon of your choice to your buttons.
 
 In this case, the icon is the only thing in the button.
-	
+
 	<a class="button"><i class="icon"></i></a>
-	
+
 You can also prepend icons to button text. Icons will center themselves vertically.
 
 	<a class="button"><i class="icon icon-prepend"></i>I have an icon</a>
-	
+
 ## Button icons with dividers
 
 Sometimes, you want a divider between icon and button text
 
 	<button class="button has-icon-divider"><i class="icon icon-prepend"></i>I have a divided icon</button>
-	
+
 ## Buttons with dropdowns
 
 Adding a nicely-styled dropdown menu to a button is dead easy. The markup for the dropdown itself is identical to that used on the navbar.
@@ -134,17 +134,17 @@ Adding a nicely-styled dropdown menu to a button is dead easy. The markup for th
 			<li><a href="#">Wait, one more</a></li>
 		</ul>
 	</div>
-	
+
 ## Custom buttons
 
 Perhaps the most powerful component of the buttons module in Helium is the ability for you to create custom-styled buttons by just four arguments to a SASS mixin.
 
 	&.button-facebook {
 		@include button-custom(
-			$theme: $button-theme, 
-			$background-color: $facebook-blue, 
-			$text-color: #fff, 
-			$reversed: true	
+			$theme: $button-theme,
+			$background-color: $facebook-blue,
+			$text-color: #fff,
+			$reversed: true
 		);
 	}
 
@@ -177,13 +177,13 @@ Forms in Helium are split into `field-group` elements which consist of a `field-
 	<form>
 		<div class="field-group">
 			<label class="field-label">Email address</label>
-			
+
 			<div class="fields">
 				<input type="email" placeholder="name@example.com">
 			</div>
 		</div>
 	</form>
-	
+
 ## Labels left of fields
 
 Putting labels to the left of fields is as simple as adding the `labels-left` class to your `<form>` and then incorporating the Helium grid markup. In the example below, I've wrapped the `field-labels` with a `span3` and the `fields` with a `span9` but you can adjust those to compensate for longer or shorter label text.
@@ -192,21 +192,21 @@ Putting labels to the left of fields is as simple as adding the `labels-left` cl
 
 		<div class="field-group">
 			<div class="row">
-			
+
 				<div class="span3">
 					<label class="field-label">First name</label>
 				</div>
-				
-				<div class="span9">								
+
+				<div class="span9">
 					<div class="fields">
 						<input type="text">
 					</div>
 				</div>
 			</div>
 		</div>
-	
+
 	</form>
-	
+
 In the same manner as the rest of the fluid grid, the "labels left of fields" form style will collapse into a traditional "labels on top of fields" design when the viewport width drops below the `$responsive-breakpoint` (767px by default).
 
 ## Additional form styles
@@ -219,7 +219,7 @@ This is useful for additional, clarifying instructions that won't fit in the lab
 
 	<div class="fields">
 		<input type="number">
-		
+
 		<div class="field-instructions block">
 			This is a small 3 digit number on the back of your card.
 		</div>
@@ -254,3 +254,7 @@ As you can see below, we've appended a class of `error` to the `field-group` and
 			<div class="error-message">You&rsquo;ve got some problems, man.</div>
 		</div>
 	</div>
+
+## Install the Compass extension
+
+[Stephen Way](http://github.com/stephenway) is maintaining a Compass extension of helium. Visit the [repo](http://github.com/stephenway/compass-helium), or run `gem install compass-helium`.
