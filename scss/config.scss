@@ -1,134 +1,134 @@
 // Colors
 // ------
 
-$gray-light: #999;
-$gray: #444;
-$gray-dark: #222;
-$blue: #006699;
-$facebook-blue: #3B5998;
-$twitter-blue: #00ACED;
-$red-dark: #A01D2B;
+$gray-light: #999 !default;
+$gray: #444 !default;
+$gray-dark: #222 !default;
+$blue: #006699 !default;
+$facebook-blue: #3B5998 !default;
+$twitter-blue: #00ACED !default;
+$red-dark: #A01D2B !default;
 
 
 // Grid
 // -----
 
-$page-width: 940px;
-$column-count: 12;
-$column-gutter: 20px;
-$responsive-breakpoint: 767px;
-$mobile-padding: 15px; // Distance from content to edge of screen on mobile
-$tablet-padding: 20px; // Distance from content to edge of screen on tablet
+$page-width: 940px !default;
+$column-count: 12 !default;
+$column-gutter: 20px !default;
+$responsive-breakpoint: 767px !default;
+$mobile-padding: 15px !default; // Distance from content to edge of screen on mobile
+$tablet-padding: 20px !default; // Distance from content to edge of screen on tablet
 
 // Typography
 // ----------
 
-$base-font-color : $gray;
-$muted-font-color : $gray-light;
-$base-font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$base-font-size : 14px;
-$base-line-height : 21px;
-$small-font-size : 12px;
-$small-line-height : 18px;
-$heading-font-family : $base-font-family;
-$heading-font-weight: 600;
-$heading-color : $gray-dark;
-$icon-size: 20px;
+$base-font-color : $gray !default;
+$muted-font-color : $gray-light !default;
+$base-font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$base-font-size : 14px !default;
+$base-line-height : 21px !default;
+$small-font-size : 12px !default;
+$small-line-height : 18px !default;
+$heading-font-family : $base-font-family !default;
+$heading-font-weight: 600 !default;
+$heading-color : $gray-dark !default;
+$icon-size: 20px !default;
 
 // Links
 // -----
 
-$link-color : $blue;
+$link-color : $blue !default;
 
 // Miscellaneous UI
 // ----------------
 
-$site-background-color: #fafafa;
-$big-border-radius: 4px;
-$small-border-radius: 4px;
-$border-color: rgba(0,0,0,0.13);
-$box-shadow: 0px 1px 1px rgba(0,0,0,0.08);
+$site-background-color: #fafafa !default;
+$big-border-radius: 4px !default;
+$small-border-radius: 4px !default;
+$border-color: rgba(0,0,0,0.13) !default;
+$box-shadow: 0px 1px 1px rgba(0,0,0,0.08) !default;
 
 // Buttons
 // -------
 
-$button-theme: glossy; // Required - can take values of glossy or flat
-$button-height: 32px; // Total height of normal size button
-$button-caret-height: 4px;
-$button-font-color: $base-font-color;
-$button-font-family: $heading-font-family;
-$button-font-size: 12px;
-$button-font-weight: 600;
-$button-icon-size: 16px;
-$button-solid-background: #e0e0e0; // Solid color for flat buttons and fallback
-$button-highlight: #fbfbfb; // Top gradient stop for glossy theme
-$button-lowlight: darken($button-highlight, 6%); // Bottom gradient stop for glossy theme
-$button-border-color: rgba(0,0,0,0.2); // Border color - ignored when theme is flat, highly recommended to keep this as an alpha value of black
-$button-border-width: 1px; // Border width - ignored when theme is flat
-$button-shine: #fff; // 1px shine at top of button and inset text - ignored when theme is flat
-$button-horizontal-padding: $button-font-size;
-$button-border-radius: $small-border-radius;
-$button-box-shadow: 0px 1px 1px rgba(0,0,0,0.08);
-$button-large-height: 40px;
-$button-large-font-size: 16px;
-$button-large-horizontal-padding: 20px;
-$button-small-height: 24px;
-$button-small-font-size: 11px;
-$button-small-horizontal-padding: 11px;
+$button-theme: glossy !default; // Required - can take values of glossy or flat
+$button-height: 32px !default; // Total height of normal size button
+$button-caret-height: 4px !default;
+$button-font-color: $base-font-color !default;
+$button-font-family: $heading-font-family !default;
+$button-font-size: 12px !default;
+$button-font-weight: 600 !default;
+$button-icon-size: 16px !default;
+$button-solid-background: #e0e0e0 !default; // Solid color for flat buttons and fallback
+$button-highlight: #fbfbfb !default; // Top gradient stop for glossy theme
+$button-lowlight: darken($button-highlight, 6%) !default; // Bottom gradient stop for glossy theme
+$button-border-color: rgba(0,0,0,0.2) !default; // Border color - ignored when theme is flat, highly recommended to keep this as an alpha value of black
+$button-border-width: 1px !default; // Border width - ignored when theme is flat
+$button-shine: #fff !default; // 1px shine at top of button and inset text - ignored when theme is flat
+$button-horizontal-padding: $button-font-size !default;
+$button-border-radius: $small-border-radius !default;
+$button-box-shadow: 0px 1px 1px rgba(0,0,0,0.08) !default;
+$button-large-height: 40px !default;
+$button-large-font-size: 16px !default;
+$button-large-horizontal-padding: 20px !default;
+$button-small-height: 24px !default;
+$button-small-font-size: 11px !default;
+$button-small-horizontal-padding: 11px !default;
 
 // Navbar
 // ------
 
-$navbar-background-color: $gray-dark;
-$navbar-height: 50px;
-$navbar-highlight: #99191C;
-$navbar-lowlight: #6A111A;
-$navbar-link-font-size: 14px;
-$navbar-link-color: #fff;
-$navbar-branding-font-size: 18px;
-$navbar-caret-height: 5px;
-$navbar-link-horizontal-padding: $navbar-link-font-size;
+$navbar-background-color: $gray-dark !default;
+$navbar-height: 50px !default;
+$navbar-highlight: #99191C !default;
+$navbar-lowlight: #6A111A !default;
+$navbar-link-font-size: 14px !default;
+$navbar-link-color: #fff !default;
+$navbar-branding-font-size: 18px !default;
+$navbar-caret-height: 5px !default;
+$navbar-link-horizontal-padding: $navbar-link-font-size !default;
 
-$vertical-nav-link-font-size: 16px;
-$vertical-nav-link-height: 32px;
+$vertical-nav-link-font-size: 16px !default;
+$vertical-nav-link-height: 32px !default;
 
-$mobile-nav-link-font-size: $base-font-size;
-$mobile-nav-link-height: 30px;
+$mobile-nav-link-font-size: $base-font-size !default;
+$mobile-nav-link-height: 30px !default;
 
 // Dropdowns
 // ---------
 
-$dropdown-background: #fff;
-$dropdown-link-font-size: $base-font-size;
-$dropdown-link-height: 24px;
-$dropdown-caret-height: 5px;
-$dropdown-box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+$dropdown-background: #fff !default;
+$dropdown-link-font-size: $base-font-size !default;
+$dropdown-link-height: 24px !default;
+$dropdown-caret-height: 5px !default;
+$dropdown-box-shadow: 0px 1px 2px rgba(0,0,0,0.2) !default;
 
 // Forms
 // -----
 
-$form-input-height: 30px;
-$form-input-gutter: 20px;
-$form-transition-duration: 0.2s;
-$input-border-radius: 2px;
-$placeholder-color: $muted-font-color;
-$placeholder-focus-color: lighten($muted-font-color, 15%);
-$radio-checkbox-input-height: 13px;
-$radio-checkbox-item-height: $base-font-size * 2;
-$radio-checkbox-font-size: $base-font-size;
-$radio-checkbox-line-height: $base-line-height;
-$single-checkbox-font-size: $small-font-size;
-$error-color: $red-dark;
+$form-input-height: 30px !default;
+$form-input-gutter: 20px !default;
+$form-transition-duration: 0.2s !default;
+$input-border-radius: 2px !default;
+$placeholder-color: $muted-font-color !default;
+$placeholder-focus-color: lighten($muted-font-color, 15%) !default;
+$radio-checkbox-input-height: 13px !default;
+$radio-checkbox-item-height: $base-font-size * 2 !default;
+$radio-checkbox-font-size: $base-font-size !default;
+$radio-checkbox-line-height: $base-line-height !default;
+$single-checkbox-font-size: $small-font-size !default;
+$error-color: $red-dark !default;
 
 // Modals
 // ------
 
-$modal-padding: 20px;
-$modal-width: 400px;
+$modal-padding: 20px !default;
+$modal-width: 400px !default;
 
 // Sprites
 // -------
 
-$sprite-color-size: 300px 300px;
-$sprite-icons-white-size: 300px 300px;
-$sprite-icons-black-size: 300px 300px;
+$sprite-color-size: 300px 300px !default;
+$sprite-icons-white-size: 300px 300px !default;
+$sprite-icons-black-size: 300px 300px !default;
